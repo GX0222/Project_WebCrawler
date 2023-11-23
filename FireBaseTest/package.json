@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "firebase": "^10.6.0",
+    "node": "^21.2.0"
+  },
+  "name": "firebasetest",
+  "version": "1.0.0",
+  "main": "FireBase.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
