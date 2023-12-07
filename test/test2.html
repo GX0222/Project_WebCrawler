@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video</title>
+    <style>
+        #iframeContainer {
+            position: relative;
+            width: 100%;
+            height: 800px;
+            overflow: hidden;
+        }
+
+        #overlayDiv {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: auto; /* 這裡設定為 auto，表示不穿透到下方的 iframe */
+        }
+
+        #youtubeIframe{
+            margin-top:-100px;
+            margin-left: -50PX;
+        }
+    </style>
+</head>
+<body>
+    <div id="iframeContainer">
+        <iframe 
+            id="youtubeIframe"
+            width="1800" 
+            height="1000" 
+            src="https://www.youtube.com/embed/Ec9MYNrQXpU?autoplay=1&controls=0&showinfo=0&rel=0&modestbranding=1&mute=1&loop=1&disablekb=1&enablejsapi=1" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+        <div id="overlayDiv"></div>
+    </div>
+    <br><br><br><br><br><br><br>
+
+    <script>
+        var player;
+
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('youtubeIframe', {
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            // 隱藏 INFO
+            event.target.getIframe().setAttribute('title', '');
+            
+            // 禁用 INFO 選項
+            event.target.setOption('showinfo', 0);
+
+            // 靜音
+            event.target.mute();
+        }
+
+        function onPlayerStateChange(event) {
+            // 如果影片結束，重新播放
+            if (event.data === YT.PlayerState.ENDED) {
+                player.playVideo();
+            }
+        }
+    </script>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+</body>
+</html>
