@@ -2,41 +2,36 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 
-// article > div > table > tbody tr:eq(3) td:eq(1)
 
 async function main() {
-
+    // https://www.tainanlohas.cc/2023/12/market-information-from-2023-12-1-to-12-3.html#11
     var SouthCity = [{
         name: "高雄",
         url: "https://strolltimes.com/activity-lazybag/3823/",
         select: "#tablepress-kaohsiung_length > label > select",
-        li: "#tablepress-kaohsiung > tbody > tr",
-        hoster: 'article > div > h2:contains("活動資訊") + table > tbody > tr:eq(4) > td:eq(1) > ul > li'
+        li: "#tablepress-kaohsiung > tbody > tr"
     },
     {
         name: "台南",
         url: "https://strolltimes.com/activity-lazybag/6764/",
         select: "#tablepress-tainan_length > label > select",
-        li: "#tablepress-tainan > tbody > tr",
-        hoster: 'article > div > h2:contains("活動資訊") + table > tbody > tr:eq(4) > td:eq(1) > ul > li'
+        li: "#tablepress-tainan > tbody > tr"
     },
     {
         name: "屏東",
         url: "https://strolltimes.com/activity-lazybag/6777/",
         select: "#tablepress-pingtung_length > label > select",
-        li: "#tablepress-pingtung > tbody > tr",
-        hoster: 'article > div > h2:contains("活動資訊") + table > tbody > tr:eq(4) > td:eq(1) > ul > li'
+        li: "#tablepress-pingtung > tbody > tr"
     },
     {
         name: "嘉義",
         url: "https://strolltimes.com/activity-lazybag/6763/",
         select: "#tablepress-chiayi_length > label > select",
-        li: "#tablepress-chiayi > tbody > tr",
-        hoster: 'article > div > h2:contains("活動資訊") + table > tbody > tr:eq(4) > td:eq(1) > ul > li'
+        li: "#tablepress-chiayi > tbody > tr"
     }];
     const browser = await puppeteer.launch({ headless: false });
     const page = await browser.newPage();
-
+    
     for (let ic = 0; ic < SouthCity.length; ic++) {
 
         await page.goto(SouthCity[ic].url, { waitUntil: 'networkidle2' });
@@ -51,7 +46,6 @@ async function main() {
                 StartTime: "開始日期",
                 EndtTime: "結束日期",
                 Location: "地點",
-                Hoster: "主辦方",
                 Url: "網址",
                 ImgUrl: "圖片網址",
                 dataText: "活動介紹"
@@ -65,13 +59,12 @@ async function main() {
                     StartTime: $(element).find("td.column-1").text(),
                     EndtTime: $(element).find("td.column-2").text(),
                     Location: $(element).find("td.column-4").text(),
-                    Hoster: "",
                     Url: $(element).find("a").prop("href")
                 };
                 result.push(Item);
             })
             return result;
-        }, SouthCity[ic])
+        },SouthCity[ic])
 
         // div#primary > main#main > article > div > p:nth-child(3)
         // 圖片網址:div#primary > main#main > article > div > p > img
@@ -89,19 +82,10 @@ async function main() {
             } else {
                 data.ImgUrl = "請確認";
             }
-
-            //介紹
             let dataText = await page.evaluate(function () {
                 return $("div#primary > main#main > article > div > p:nth-child(3)").text();
             });
             data.Text = dataText;
-
-            //主辦方
-            let dataHoster = await page.evaluate(function (city) {
-                return $(city.hoster).text();
-            }, SouthCity[ic]);
-            data.Hoster = dataHoster.replace(/"/g, '')  ;
-
             await new Promise(resolve => setTimeout(resolve, 1000));
         }
         const csvContent = dataList.map(item => Object.values(item).join(',')).join('\n');
