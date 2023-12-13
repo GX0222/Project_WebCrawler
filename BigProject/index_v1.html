@@ -22,6 +22,8 @@
     <!-- 背景影片js -->
     <script src="Tools/Bg_YTiframe.js"></script>
     <script src="https://www.youtube.com/iframe_api"></script>
+    <!-- Gruop_City.css -->
+    <link rel="stylesheet" href="Tools/Gruop_City.css">
 
     <style>
         body {
@@ -45,24 +47,26 @@
         /* ============================================= */
 
         .navbar {
-            transition: background-color 0.3s ease-in-out; /* 添加過渡效果 */
+            transition: background-color 0.3s ease-in-out;
+            /* 添加過渡效果 */
         }
 
         .navbar.scrolled {
-            background-color: white; /* 滾動高度超過 55vw 時的背景顏色 */
+            background-color: white;
+            /* 滾動高度超過 55vw 時的背景顏色 */
         }
 
-        a.nav-link{
+        a.nav-link {
             color: aliceblue;
             text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
         }
 
-        #mynavbar{
+        #mynavbar {
             background-color: rgba(0, 0, 0, 0.2);
         }
 
-        .navbar-toggler{
-            background-color:aliceblue;
+        .navbar-toggler {
+            background-color: aliceblue;
         }
 
         /* ============================================= */
@@ -82,65 +86,6 @@
             padding: 0px;
         }
 
-        #groupCity {
-            width: 100%;
-            /* background-color: aquamarine; */
-            margin: 0px;
-            padding: 5px;
-        }
-
-        div.cityDiv {
-            max-width: 320px;
-            height: 180px;
-            border: 2px;
-            border-radius: 5px;
-            margin: 5px;
-            /* background-color: aquamarine; */
-        }
-
-        div.cityCol {
-            max-width: 320px;
-            min-width: 180px;
-            margin: 0px;
-            padding: 0px;
-            /* border: solid 2px;
-            border-radius: 5px; */
-        }
-
-        div.cityDiv {
-            text-align: center;
-            justify-content: center;
-            align-items: center;
-            display: flex;
-            overflow: hidden;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        }
-
-        img.cityImg {
-            width: 310px;
-            height: auto;
-        }
-
-        div.cityDiv>div.card-img-overlay {
-            margin: 0px;
-            padding: 0px;
-            text-align: center;
-            justify-content: center;
-            align-items: center;
-            display: flex;
-        }
-
-        div.cityDiv>div.card-img-overlay:hover {
-            background-color: rgba(0, 0, 0, 0.2);
-        }
-
-        div.cityDiv>div.card-img-overlay>h3 {
-            margin: 0px;
-            padding: 0px;
-            color: aliceblue;
-            text-shadow: 0px 0px 4px rgba(0, 0, 0, 1);
-        }
-
         div.homeCenter {
             margin: 0px;
             padding: 0px;
@@ -148,7 +93,23 @@
             text-align: center;
             justify-content: center;
             align-items: center;
-            display: flex;
+            /* display: flex; */
+        }
+
+        #groupNews {
+            width: 100%;
+            /* background-color: aquamarine; */
+            margin: 0px;
+            padding: 5px;
+        }
+
+        div.newsCol {
+            width: 45%;
+            height: 500px;
+            margin: 5px;
+            padding: 0px;
+            border: solid 2px;
+            border-radius: 5px;
         }
 
         /* =================================================== */
@@ -186,7 +147,7 @@
 
         /* ==================================================== */
 
-        footer{
+        footer {
             height: 200px;
             background-color: aquamarine;
         }
@@ -248,7 +209,39 @@
         </nav>
         <!-- ========== -->
         <div id="newBG" class="row">
-            <div class="homeCenter col-12 col-md-9">
+            <div class="homeCenter col-12 col-md-9 order-2 order-md-1">
+                <div id="groupNews" class="container">
+                    <div class="groupTitle">
+                        <h3>最新消息</h3>
+                    </div>
+                    <div class="row justify-content-center m-0 p-0">
+                        <div class="newsCol col-6 col-sm-6 col-md-6">
+
+                        </div>
+                        <div class="newsCol col-6 col-sm-6 col-md-6">
+
+                        </div>
+
+                    </div>
+                    <div class="row justify-content-center m-0 p-0">
+                        <div class="newsCol col-6 col-sm-6 col-md-6">
+
+                        </div>
+                        <div class="newsCol col-6 col-sm-6 col-md-6">
+
+                        </div>
+
+                    </div>
+                    <div class="row justify-content-center m-0 p-0">
+                        <div class="newsCol col-6 col-sm-6 col-md-6">
+
+                        </div>
+                        <div class="newsCol col-6 col-sm-6 col-md-6">
+
+                        </div>
+
+                    </div>
+                </div>
                 <div id="groupCity" class="container">
                     <div class="groupTitle">
                         <h3>縣市踩點</h3>
@@ -357,7 +350,7 @@
                     </div>
                 </div>
             </div>
-            <div class="homeRight col-0 col-md-3">
+            <div class="homeRight col-0 col-md-3 order-1 order-md-2">
                 <div class="wheatherDiv">
                     <div class="row p-0 m-0">
                         <div class="wheatherCol col-6 col-xl-4">
@@ -378,7 +371,9 @@
                 </div>
             </div>
         </div>
-        <footer><h1>Footer</h1></footer>
+        <footer>
+            <h1>Footer</h1>
+        </footer>
     </div>
 
     <script>
@@ -406,7 +401,7 @@
         //=====
 
         // nabar 移動超過55vw變色
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             var navbar = document.getElementById('myNavbar');
             if (window.scrollY > 55 * window.innerWidth / 100) {
                 navbar.classList.add('scrolled');
