@@ -31,7 +31,7 @@
         }
 
         #overlayDiv {
-            padding-top: 55vw;
+            padding-top: 40vw;
         }
 
         #newBG {
@@ -72,6 +72,7 @@
         /* ============================================= */
 
         div.groupTitle {
+            width: 100%;
             margin: 0px;
             margin-bottom: 5px;
             padding: 5px;
@@ -90,9 +91,9 @@
             margin: 0px;
             padding: 0px;
             /* background-color: blue; */
-            text-align: center;
+            /* text-align: center;
             justify-content: center;
-            align-items: center;
+            align-items: center; */
             /* display: flex; */
         }
 
@@ -103,21 +104,100 @@
             padding: 5px;
         }
 
-        div.newsCol {
-            width: 45%;
-            height: 500px;
+        div.newsCon {
+            width: calc(100% - 10px);
+            height: 300px;
             margin: 5px;
             padding: 0px;
             border: solid 2px;
             border-radius: 5px;
+            background-color: aqua;
+            display: inline-flex;
+            position: relative;
         }
+
+        div.newsCol {
+            width: 100%;
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+            position: relative;
+            background-color: blueviolet;
+            /* border: solid 2px;
+            border-radius: 5px; */
+            /* border-bottom: 300px solid seagreen;
+            border-left: 25px solid transparent; */
+            /* background-color: seagreen;
+            transform: skew(20deg); */
+        }
+
+        div.colTextCon {
+            width: 250px;
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+            background-color: rgb(0, 208, 255);
+            position: relative;
+            z-index: 666;
+        }
+
+        div.newsColText {
+            width: 250px;
+            height: 100%;
+            margin: 0px;
+            padding: 25px;
+            /* background-color: red; */
+            background-color: rgb(222, 222, 222);
+            position: relative;
+        }
+
+        div.newsColText::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: -55px;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(222, 222, 222);
+            transform: skewX(-20deg);
+        }
+
+        @media screen and (min-width: 768px) {
+            div.newsCon {
+                height: 350px;
+            }
+
+            div.colTextCon {
+                width: 350px;
+            }
+
+            div.newsColText {
+                width: 350px;
+            }
+
+            div.newsColText::before {
+                left: -65px;
+            }
+        }
+
+        /* @media screen and (min-width: 960px) {
+            div.newsColText::before {
+                left: -35%;
+            }
+        }
+
+        @media screen and (min-width: 1080px) {
+            div.newsColText::before {
+                left: -30%;
+            }
+        } */
 
         /* =================================================== */
 
         div.homeRight {
             margin: 0px;
             padding: 0px;
-            /* background-color: chartreuse; */
         }
 
         div.wheatherDiv {
@@ -210,39 +290,35 @@
         <!-- ========== -->
         <div id="newBG" class="row">
             <div class="homeCenter col-12 col-md-9 order-2 order-md-1">
-                <div id="groupNews" class="container">
+                <div id="groupNews" class="">
                     <div class="groupTitle">
                         <h3>最新消息</h3>
                     </div>
-                    <div class="row justify-content-center m-0 p-0">
-                        <div class="newsCol col-6 col-sm-6 col-md-6">
+                    <div class="newsCon">
+                        <div class="row justify-content-center m-0 p-0">
+                            <div class="newsCol col-6 col-sm-6 col-md-6">
+
+                            </div>
+                            <div class="newsCol col-6 col-sm-6 col-md-6">
+
+                            </div>
 
                         </div>
-                        <div class="newsCol col-6 col-sm-6 col-md-6">
-
-                        </div>
-
                     </div>
-                    <div class="row justify-content-center m-0 p-0">
-                        <div class="newsCol col-6 col-sm-6 col-md-6">
 
+                    <div class="newsCon">
+                        <div class="newsCol">
+                            <img class="newsImg" src="./image/2023聖誕節.jpg" alt="">
                         </div>
-                        <div class="newsCol col-6 col-sm-6 col-md-6">
-
+                        <div class="colTextCon">
+                            <div class="newsColText">
+                                台灣，坐落於亞洲東部，擁有多樣風景與豐富文化。山川起伏，美不勝收，從高山峻嶺到沙灘海岸，景觀多元。台灣以多元的美食聞名，夜市繁華熱鬧，成為品嚐各地風味的絕佳場所。在這片寶島上，傳統文化與現代生活共存，廟宇、古蹟與現代建築共構城市風貌。友善的台灣人民熱情好客，讓遊客感受到溫暖的人情味。台灣，一個充滿活力、兼具傳統和現代風情的迷人地方。
+                            </div>
                         </div>
-
                     </div>
-                    <div class="row justify-content-center m-0 p-0">
-                        <div class="newsCol col-6 col-sm-6 col-md-6">
 
-                        </div>
-                        <div class="newsCol col-6 col-sm-6 col-md-6">
-
-                        </div>
-
-                    </div>
                 </div>
-                <div id="groupCity" class="container">
+                <div id="groupCity" class="">
                     <div class="groupTitle">
                         <h3>縣市踩點</h3>
                     </div>
@@ -403,7 +479,7 @@
         // nabar 移動超過55vw變色
         window.addEventListener('scroll', function () {
             var navbar = document.getElementById('myNavbar');
-            if (window.scrollY > 55 * window.innerWidth / 100) {
+            if (window.scrollY > 30 * window.innerWidth / 100) {
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
