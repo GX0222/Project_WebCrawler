@@ -24,6 +24,8 @@
     <script src="https://www.youtube.com/iframe_api"></script>
     <!-- Gruop_City.css -->
     <link rel="stylesheet" href="Tools/Gruop_City.css">
+    <!-- Group_News.css -->
+    <link rel="stylesheet" href="Tools/Group_News.css">
 
     <style>
         body {
@@ -36,11 +38,9 @@
 
         #newBG {
             width: calc(100% - 10px);
-            margin: 5px;
+            margin: 5px auto;
             margin-top: 10px;
             padding: 0px;
-            display: inline-flex;
-            justify-content: flex-end;
             /* border: solid 2px; */
         }
 
@@ -51,22 +51,79 @@
             /* 添加過渡效果 */
         }
 
-        .navbar.scrolled {
-            background-color: white;
-            /* 滾動高度超過 55vw 時的背景顏色 */
-        }
-
         a.nav-link {
             color: aliceblue;
             text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+            border-radius: 5px;
+            text-align: center;
         }
 
-        #mynavbar {
-            background-color: rgba(0, 0, 0, 0.2);
+        a.nav-link:hover {
+            color: white;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .navbar-collapse {
+            /* background-color: aquamarine; */
+            width: 200px;
+            margin-left: auto;
+            margin-right: 10px;
+            margin-top: -1px;
+            /* padding: 5px; */
+            background-color: rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+        }
+
+        .scrolledV2 {
+            background-color: white;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-top: 0px;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+        }
+
+        .scrolledV2>ul .nav-item>a {
+            color: rgba(0, 0, 0, 0.7);
+            text-shadow: 0px 0px 5px rgba(0, 0, 0, 0);
+        }
+
+        .scrolledV2>ul .nav-item>a:hover {
+            color: plum;
         }
 
         .navbar-toggler {
-            background-color: aliceblue;
+            background-color: white;
+            margin-right: 10px;
+        }
+
+        .navbar-toggler:focus {
+            outline: none;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-width: 1px;
+            border-style: solid;
+        }
+
+        #mynavbarCon {
+            width: 100vw;
+            margin: 0px;
+            padding: 5px;
+            padding-right: 10px;
+            border: 1px solid rgba(0, 0, 0, 0);
+        }
+
+        .scrolled {
+            background-color: white;
+            /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+            border: 1px solid rgba(0, 0, 0, 0.1) !important;
+            /* 滾動高度超過 35vw 時的背景顏色 */
+        }
+
+        .testt {
+            margin-left: auto;
+            margin-right: 0px;
         }
 
         /* ============================================= */
@@ -90,6 +147,7 @@
         div.homeCenter {
             margin: 0px;
             padding: 0px;
+            max-width: 1000px;
             /* background-color: blue; */
             /* text-align: center;
             justify-content: center;
@@ -97,107 +155,14 @@
             /* display: flex; */
         }
 
-        #groupNews {
-            width: 100%;
-            /* background-color: aquamarine; */
-            margin: 0px;
-            padding: 5px;
-        }
 
-        div.newsCon {
-            width: calc(100% - 10px);
-            height: 300px;
-            margin: 5px;
-            padding: 0px;
-            border: solid 2px;
-            border-radius: 5px;
-            background-color: aqua;
-            display: inline-flex;
-            position: relative;
-        }
-
-        div.newsCol {
-            width: 100%;
-            height: 100%;
-            margin: 0px;
-            padding: 0px;
-            position: relative;
-            background-color: blueviolet;
-            /* border: solid 2px;
-            border-radius: 5px; */
-            /* border-bottom: 300px solid seagreen;
-            border-left: 25px solid transparent; */
-            /* background-color: seagreen;
-            transform: skew(20deg); */
-        }
-
-        div.colTextCon {
-            width: 250px;
-            height: 100%;
-            margin: 0px;
-            padding: 0px;
-            background-color: rgb(0, 208, 255);
-            position: relative;
-            z-index: 666;
-        }
-
-        div.newsColText {
-            width: 250px;
-            height: 100%;
-            margin: 0px;
-            padding: 25px;
-            /* background-color: red; */
-            background-color: rgb(222, 222, 222);
-            position: relative;
-        }
-
-        div.newsColText::before {
-            content: '';
-            position: absolute;
-            z-index: -1;
-            top: 0;
-            left: -55px;
-            width: 100%;
-            height: 100%;
-            background-color: rgb(222, 222, 222);
-            transform: skewX(-20deg);
-        }
-
-        @media screen and (min-width: 768px) {
-            div.newsCon {
-                height: 350px;
-            }
-
-            div.colTextCon {
-                width: 350px;
-            }
-
-            div.newsColText {
-                width: 350px;
-            }
-
-            div.newsColText::before {
-                left: -65px;
-            }
-        }
-
-        /* @media screen and (min-width: 960px) {
-            div.newsColText::before {
-                left: -35%;
-            }
-        }
-
-        @media screen and (min-width: 1080px) {
-            div.newsColText::before {
-                left: -30%;
-            }
-        } */
 
         /* =================================================== */
 
         div.homeRight {
             margin: 0px;
             padding: 0px;
+            max-width: 400px;
         }
 
         div.wheatherDiv {
@@ -248,209 +213,182 @@
 
     <div id="overlayDiv">
         <!-- navBar -->
-        <nav id="myNavbar" class="navbar bg-none w-100 fixed-top" style=" top: 0px;">
-            <div class="container-fluid">
-                <a href="#" class="navbar-brand" style="margin-right: 100px; font-size:x-large;">Logo</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="mynavbar">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a id="news" onclick="nav_item_active(1)" class="nav-link" aria-current="page"
-                                href="#">活動資訊</a>
-                        </li>
-                        <li class="nav-item">
-                            <a id="trans" onclick="nav_item_active(2)" class="nav-link" aria-current="page"
-                                href="#">交通情報</a>
-                        </li>
-                        <li class="nav-item">
-                            <a id="forum" onclick="nav_item_active(2)" class="nav-link" aria-current="page"
-                                href="#">旅遊論壇</a>
-                        </li>
-                        <li class="nav-item">
-                            <a id="aboutus" onclick="nav_item_active(2)" class="nav-link" aria-current="page"
-                                href="#">關於我們</a>
-                        </li>
-                    </ul>
-                    <form class="d-flex" role="search">
-                        <input id="search_input" class="form-control me-2" type="search" placeholder="搜尋"
-                            aria-label="Search">
-                        <button id="search_btn" class="btn btn-outline-success" type="submit">
-                            <span class="material-icons" style="vertical-align: middle;">
-                                search
-                            </span>
+        <nav id="myNavbar" class="navbar bg-none w-100 fixed-top m-0 p-0" style=" top: 0px;">
+            <div class="container-fluid m-0 p-0">
+                <div class="row m-0 p-0">
+                    <div id="mynavbarCon" class="col-12 d-flex justify-content-between align-items-center">
+                        <a href="#" class="navbar-brand" style="font-size:x-large;">Logo</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#mynavbar" aria-controls="navbarSupportedContent" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
                         </button>
-                    </form>
+                    </div>
+                    <div class="testt">
+                        <div class="collapse navbar-collapse" id="mynavbar">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a id="news" onclick="nav_item_active()" class="nav-link" aria-current="page"
+                                        href="#">活動資訊</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a id="trans" onclick="nav_item_active()" class="nav-link" aria-current="page"
+                                        href="#">交通情報</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a id="forum" onclick="nav_item_active()" class="nav-link" aria-current="page"
+                                        href="#">旅遊論壇</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a id="aboutus" onclick="nav_item_active()" class="nav-link" aria-current="page"
+                                        href="#">關於我們</a>
+                                </li>
+                            </ul>
+                            <form class="d-flex" role="search">
+                                <input id="search_input" class="form-control me-2" type="search" placeholder="搜尋"
+                                    aria-label="Search">
+                                <button id="search_btn" class="btn btn-outline-success" type="submit">
+                                    <span class="material-icons" style="vertical-align: middle;">
+                                        search
+                                    </span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>
-        <!-- ========== -->
-        <div id="newBG" class="row">
-            <div class="homeCenter col-12 col-md-9 order-2 order-md-1">
-                <div id="groupNews" class="">
-                    <div class="groupTitle">
-                        <h3>最新消息</h3>
-                    </div>
-                    <div class="newsCon">
-                        <div class="row justify-content-center m-0 p-0">
-                            <div class="newsCol col-6 col-sm-6 col-md-6">
-
-                            </div>
-                            <div class="newsCol col-6 col-sm-6 col-md-6">
-
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="newsCon">
-                        <div class="newsCol">
-                            <img class="newsImg" src="./image/2023聖誕節.jpg" alt="">
-                        </div>
-                        <div class="colTextCon">
-                            <div class="newsColText">
-                                台灣，坐落於亞洲東部，擁有多樣風景與豐富文化。山川起伏，美不勝收，從高山峻嶺到沙灘海岸，景觀多元。台灣以多元的美食聞名，夜市繁華熱鬧，成為品嚐各地風味的絕佳場所。在這片寶島上，傳統文化與現代生活共存，廟宇、古蹟與現代建築共構城市風貌。友善的台灣人民熱情好客，讓遊客感受到溫暖的人情味。台灣，一個充滿活力、兼具傳統和現代風情的迷人地方。
-                            </div>
-                        </div>
-                    </div>
-
+    </div>
+    <!-- ========== -->
+    <div id="newBG" class="row justify-content-center">
+        <div class="homeCenter col-12 col-md-9 order-2 order-md-1">
+            <!-- ---------- -->
+            <div id="groupNews" class="">
+                <div class="groupTitle">
+                    <h3>最新消息</h3>
                 </div>
-                <div id="groupCity" class="">
-                    <div class="groupTitle">
-                        <h3>縣市踩點</h3>
+
+                <div class="newsCon">
+                    <div class="newsImgCon">
+                        <img class="newsImg" src="./image/2023聖誕節.jpg" alt="">
                     </div>
-                    <div class="row justify-content-center m-0 p-0">
-                        <div class="cityCol col-6 col-sm-6 col-md-6 col-lg-3">
-                            <div class="cityDiv card">
-                                <img class="cityImg rounded card-img-top" src="./image/台中市.png">
-                                <div class="card-img-overlay">
-                                    <h3 class="card-title">台中市</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cityCol col-6 col-sm-6 col-md-6 col-lg-3">
-                            <div class="cityDiv card">
-                                <img class="cityImg rounded card-img-top" src="./image/台中市.png">
-                                <div class="card-img-overlay">
-                                    <h3 class="card-title">台中市</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cityCol col-6 col-sm-6 col-md-6 col-lg-3">
-                            <div class="cityDiv card">
-                                <img class="cityImg rounded card-img-top" src="./image/台中市.png">
-                                <div class="card-img-overlay">
-                                    <h3 class="card-title">台中市</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cityCol col-6 col-sm-6 col-md-6 col-lg-3">
-                            <div class="cityDiv card">
-                                <img class="cityImg rounded card-img-top" src="./image/台中市.png">
-                                <div class="card-img-overlay">
-                                    <h3 class="card-title">台中市</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center m-0 p-0">
-                        <div class="cityCol col-6 col-sm-6 col-md-6 col-lg-3">
-                            <div class="cityDiv card">
-                                <img class="cityImg rounded card-img-top" src="./image/台中市.png">
-                                <div class="card-img-overlay">
-                                    <h3 class="card-title">台中市</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cityCol col-6 col-sm-6 col-md-6 col-lg-3">
-                            <div class="cityDiv card">
-                                <img class="cityImg rounded card-img-top" src="./image/台中市.png">
-                                <div class="card-img-overlay">
-                                    <h3 class="card-title">台中市</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cityCol col-6 col-sm-6 col-md-6 col-lg-3">
-                            <div class="cityDiv card">
-                                <img class="cityImg rounded card-img-top" src="./image/台中市.png">
-                                <div class="card-img-overlay">
-                                    <h3 class="card-title">台中市</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cityCol col-6 col-sm-6 col-md-6 col-lg-3">
-                            <div class="cityDiv card">
-                                <img class="cityImg rounded card-img-top" src="./image/台中市.png">
-                                <div class="card-img-overlay">
-                                    <h3 class="card-title">台中市</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center m-0 p-0">
-                        <div class="cityCol col-6 col-sm-6 col-md-6 col-lg-3">
-                            <div class="cityDiv card">
-                                <img class="cityImg rounded card-img-top" src="./image/台中市.png">
-                                <div class="card-img-overlay">
-                                    <h3 class="card-title">台中市</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cityCol col-6 col-sm-6 col-md-6 col-lg-3">
-                            <div class="cityDiv card">
-                                <img class="cityImg rounded card-img-top" src="./image/台中市.png">
-                                <div class="card-img-overlay">
-                                    <h3 class="card-title">台中市</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cityCol col-6 col-sm-6 col-md-6 col-lg-3">
-                            <div class="cityDiv card">
-                                <img class="cityImg rounded card-img-top" src="./image/台中市.png">
-                                <div class="card-img-overlay">
-                                    <h3 class="card-title">台中市</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cityCol col-6 col-sm-6 col-md-6 col-lg-3">
-                            <div class="cityDiv card">
-                                <img class="cityImg rounded card-img-top" src="./image/台中市.png">
-                                <div class="card-img-overlay">
-                                    <h3 class="card-title">台中市</h3>
-                                </div>
+                    <div class="newsTextCon">
+                        <div class="newsTextBgR">
+                            <div class="newsText">
+                                台灣，坐落於亞洲東部，擁有多樣風景與豐富文化。山川起伏，美不勝收，從高山峻嶺到沙灘海岸，景觀多元。台灣以多元的美食聞名，夜市繁華熱鬧，成為品嚐各地風味的絕佳場所。在這片寶島上，傳統文化與現代生活共存，廟宇、古蹟與現代建築共構城市風貌。友善的台灣人民熱情好客，讓遊客感受到溫暖的人情味。台灣，一個充滿活力、兼具傳統和現代風情的迷人地方。台灣，坐落於亞洲東部，擁有多樣風景與豐富文化。山川起伏，美不勝收，從高山峻嶺到沙灘海岸，景觀多元。台灣以多元的美食聞名，夜市繁華熱鬧，成為品嚐各地風味的絕佳場所。在這片寶島上，傳統文化與現代生活共存，廟宇、古蹟與現代建築共構城市風貌。友善的台灣人民熱情好客，讓遊客感受到溫暖的人情味。台灣，一個充滿活力、兼具傳統和現代風情的迷人地方。
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="newsCon">
+                    <div class="newsTextCon">
+                        <div class="newsTextBgL">
+                            <div class="newsText">
+                                台灣，坐落於亞洲東部，擁有多樣風景與豐富文化。山川起伏，美不勝收，從高山峻嶺到沙灘海岸，景觀多元。台灣以多元的美食聞名，夜市繁華熱鬧，成為品嚐各地風味的絕佳場所。在這片寶島上，傳統文化與現代生活共存，廟宇、古蹟與現代建築共構城市風貌。友善的台灣人民熱情好客，讓遊客感受到溫暖的人情味。台灣，一個充滿活力、兼具傳統和現代風情的迷人地方。台灣，坐落於亞洲東部，擁有多樣風景與豐富文化。山川起伏，美不勝收，從高山峻嶺到沙灘海岸，景觀多元。台灣以多元的美食聞名，夜市繁華熱鬧，成為品嚐各地風味的絕佳場所。在這片寶島上，傳統文化與現代生活共存，廟宇、古蹟與現代建築共構城市風貌。友善的台灣人民熱情好客，讓遊客感受到溫暖的人情味。台灣，一個充滿活力、兼具傳統和現代風情的迷人地方。
+                            </div>
+                        </div>
+                    </div>
+                    <div class="newsImgCon">
+                        <img class="newsImg" src="./image/2023聖誕節.jpg" alt="">
+                    </div>
+                </div>
+
             </div>
-            <div class="homeRight col-0 col-md-3 order-1 order-md-2">
-                <div class="wheatherDiv">
-                    <div class="row p-0 m-0">
-                        <div class="wheatherCol col-6 col-xl-4">
-                            <div class="wheatherBlock">台中市</div>
-                        </div>
-                        <div class="wheatherCol col-6 col-xl-4">
-                            <div class="wheatherBlock">24C</div>
-                        </div>
-                        <div class="wheatherCol col col-xl-4">
-                            <div class="wheatherBlock">
-                                <div class="row">
-                                    <div class="col-12">降雨機率:</div>
-                                    <div class="col">20%</div>
+            <!-- ---------- -->
+            <div id="groupCity" class="">
+                <div class="groupTitle">
+                    <h3>縣市踩點</h3>
+                </div>
+                <div class="row justify-content-center m-0 p-0">
+                    <div class="col-12 col-lg-8 m-0 p-0">
+                        <div class="row justify-content-center m-0 p-0">
+                            <div class="cityCol col-6">
+                                <div class="cityDiv card">
+                                    <img class="cityImg rounded card-img-top" src="./image/台中市.png">
+                                    <div class="card-img-overlay">
+                                        <h3 class="card-title">台中市</h3>
+                                    </div>
                                 </div>
+                            </div>
+                            <div class="cityCol col-6">
+                                <div class="cityDiv card">
+                                    <img class="cityImg rounded card-img-top" src="./image/台中市.png">
+                                    <div class="card-img-overlay">
+                                        <h3 class="card-title">台中市</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cityCol col-0 col-lg-4">
+                        <div class="cityDiv card">
+                            <img class="cityImgV2 rounded card-img-top" src="./image/台中市.png">
+                            <div class="card-img-overlay">
+                                <h3 class="card-title">台中市</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row justify-content-center m-0 p-0">
+                    <div class="cityColV2 col-4">
+                        <div class="cityDiv card">
+                            <img class="cityImg rounded card-img-top" src="./image/台中市.png">
+                            <div class="card-img-overlay">
+                                <h3 class="card-title">台中市</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cityColV2 col-4">
+                        <div class="cityDiv card">
+                            <img class="cityImg rounded card-img-top" src="./image/台中市.png">
+                            <div class="card-img-overlay">
+                                <h3 class="card-title">台中市</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cityColV2 col-4">
+                        <div class="cityDiv card">
+                            <img class="cityImg rounded card-img-top" src="./image/台中市.png">
+                            <div class="card-img-overlay">
+                                <h3 class="card-title">台中市</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- ---------- -->
+
+        <div class="homeRight col-0 col-md-3 order-1 order-md-2">
+            <div class="wheatherDiv">
+                <div class="row p-0 m-0">
+                    <div class="wheatherCol col-6 col-xl-4">
+                        <div class="wheatherBlock">台中市</div>
+                    </div>
+                    <div class="wheatherCol col-6 col-xl-4">
+                        <div class="wheatherBlock">24C</div>
+                    </div>
+                    <div class="wheatherCol col col-xl-4">
+                        <div class="wheatherBlock">
+                            <div class="row">
+                                <div class="col-12">降雨機率:</div>
+                                <div class="col">20%</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <footer>
-            <h1>Footer</h1>
-        </footer>
     </div>
+    <footer>
+        <h1>Footer</h1>
+    </footer>
+
 
     <script>
         //背景影片重複撥放=====
@@ -478,11 +416,20 @@
 
         // nabar 移動超過55vw變色
         window.addEventListener('scroll', function () {
-            var navbar = document.getElementById('myNavbar');
-            if (window.scrollY > 30 * window.innerWidth / 100) {
+            var navbar = document.getElementById('mynavbarCon');
+            if (window.scrollY > 35 * window.innerWidth / 100) {
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
+            }
+        });
+
+        window.addEventListener('scroll', function () {
+            var navbar = document.getElementById('mynavbar');
+            if (window.scrollY > 35 * window.innerWidth / 100) {
+                navbar.classList.add('scrolledV2');
+            } else {
+                navbar.classList.remove('scrolledV2');
             }
         });
 

@@ -5,25 +5,33 @@
     padding: 5px;
 }
 
-div.cityDiv {
-    max-width: 320px;
-    height: 180px;
-    border: 2px;
-    border-radius: 5px;
-    margin: 5px;
-    /* background-color: aquamarine; */
+div.cityCol {
+    max-width: 100%;
+    min-width: 230px;
+    height: 230px;
+    margin: 0px;
+    padding: 5px;
+    /* border: solid 2px;
+    border-radius: 5px; */
 }
 
-div.cityCol {
-    max-width: 320px;
-    min-width: 180px;
+div.cityColV2 {
+    max-width: 100%;
+    min-width: 230px;
+    height: 230px;
     margin: 0px;
-    padding: 0px;
+    padding: 5px;
     /* border: solid 2px;
     border-radius: 5px; */
 }
 
 div.cityDiv {
+    width: 100%;
+    height: 100%;
+    /* border: 2px;
+    border-radius: 5px; */
+    margin: 0px;
+    padding: 0px;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -33,8 +41,24 @@ div.cityDiv {
 }
 
 img.cityImg {
-    width: 310px;
-    height: auto;
+    width: auto;
+    height: 110%;
+}
+
+img.cityImgV2 {
+    width: auto;
+    height: 110%;
+}
+
+@media screen  and (max-width: 992px){
+    img.cityImgV2 {
+        width: 100%;
+        height: auto;
+    }
+    div.cityColV2 {
+        min-width: 150px;
+        height: 150px;
+    }
 }
 
 div.cityDiv>div.card-img-overlay {
