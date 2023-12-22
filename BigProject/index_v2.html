@@ -54,6 +54,14 @@
             /* border: solid 2px; */
         }
 
+        .BGC_Gray {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .BGC_Green {
+            background-color: rgba(0, 150, 0, 0.3);
+        }
+
         /* ============================================= */
 
         .navbar {
@@ -166,7 +174,18 @@
             /* display: flex; */
         }
 
-
+        div.classIcon {
+            margin: 5px;
+            padding: 0px;
+            /* height: 90px; */
+            min-width: calc(20% - 10px);
+            aspect-ratio: 1/1;
+            border-radius: 5px;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            display: flex;
+        }
 
         /* =================================================== */
 
@@ -328,7 +347,6 @@
 
         footer {
             height: 200px;
-            background-color: aquamarine;
         }
 
         /* ==================================================== */
@@ -449,6 +467,23 @@
         </div>
         <!-- ---------- -->
         <div class="homeCenter col-12 col-md-9 order-2 order-md-1">
+            <div class="row m-0 p-0 w-100">
+                <div class="col m-0 p-0">
+                    <div class="classIcon BGC_Green">休閒旅遊</div>
+                </div>
+                <div class="col m-0 p-0">
+                    <div class="classIcon BGC_Green">藝文活動</div>
+                </div>
+                <div class="col m-0 p-0">
+                    <div class="classIcon BGC_Green">親子</div>
+                </div>
+                <div class="col m-0 p-0">
+                    <div class="classIcon BGC_Green">文創/市集</div>
+                </div>
+                <div class="col m-0 p-0">
+                    <div class="classIcon BGC_Green">博物館/美術館</div>
+                </div>
+            </div>
             <!-- ---------- -->
             <div id="groupNews" class="">
                 <div class="groupTitle">
@@ -592,7 +627,7 @@
             </div>
         </div>
     </div>
-    <footer>
+    <footer class="BGC_Gray">
         <h1>Footer</h1>
     </footer>
 
