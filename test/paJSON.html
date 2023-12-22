@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaJSON</title>
+    <!-- 引入 jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <script>
+        $.getJSON("./Weather.json", function (data) {
+            let resData = {
+                "City": data.records.location[0].locationName,
+                "Data":data.records.location[0].weatherElement[0]
+            }
+            console.log(resData);
+        })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ", " + error;
+                console.error('讀取 JSON 時發生錯誤: ' + err);
+            });
+    </script>
+
+</body>
+
+</html>
