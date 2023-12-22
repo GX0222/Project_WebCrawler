@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <!-- Google Icon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- SimpleBar-->
+    <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+    <!-- 背景影片css -->
+    <link rel="stylesheet" href="Tools/Bg_YTiframe.css">
+    <!-- 背景影片js -->
+    <script src="Tools/Bg_YTiframe.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <!-- Gruop_City.css -->
+    <link rel="stylesheet" href="Tools/Gruop_City.css">
+
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        #overlayDiv {
+            padding-top: 55vw;
+        }
+
+        #newBG {
+            width: calc(100% - 10px);
+            margin: 5px;
+            margin-top: 10px;
+            padding: 0px;
+            display: inline-flex;
+            justify-content: flex-end;
+            /* border: solid 2px; */
+        }
+
+        /* ============================================= */
+
+        .navbar {
+            transition: background-color 0.3s ease-in-out;
+            /* 添加過渡效果 */
+        }
+
+        .navbar.scrolled {
+            background-color: white;
+            /* 滾動高度超過 55vw 時的背景顏色 */
+        }
+
+        a.nav-link {
+            color: aliceblue;
+            text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+        }
+
+        #mynavbar {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar-toggler {
+            background-color: aliceblue;
+        }
+
+        /* ============================================= */
+
+        div.groupTitle {
+            margin: 0px;
+            margin-bottom: 5px;
+            padding: 5px;
+            text-align: left;
+            justify-content: center;
+            align-items: center;
+            border-bottom: solid 0.5px rgba(0, 0, 0, 0.3);
+        }
+
+        div.groupTitle>h3 {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        div.homeCenter {
+            margin: 0px;
+            padding: 0px;
+            /* background-color: blue; */
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            /* display: flex; */
+        }
+
+        #groupNews {
+            width: 100%;
+            /* background-color: aquamarine; */
+            margin: 0px;
+            padding: 5px;
+        }
+
+        div.newsCol {
+            width: 45%;
+            height: 500px;
+            margin: 5px;
+            padding: 0px;
+            border: solid 2px;
+            border-radius: 5px;
+        }
+
+        /* =================================================== */
+
+        div.homeRight {
+            margin: 0px;
+            padding: 0px;
+            /* background-color: chartreuse; */
+        }
+
+        div.wheatherDiv {
+            width: 100%;
+            height: 230px;
+            margin: 0px;
+            padding: 5px;
+            border: solid 2px rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+        }
+
+        div.wheatherCol {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        div.wheatherBlock {
+            height: 100px;
+            margin: 5px;
+            border: solid 2px rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+
+        /* ==================================================== */
+
+        footer {
+            height: 200px;
+            background-color: aquamarine;
+        }
+
+        /* ==================================================== */
+    </style>
+</head>
+<div id="iframeContainer">
+    <iframe id="youtubeIframe"
+        src="https://www.youtube.com/embed/wIf-HN15URA?autoplay=1&controls=0&showinfo=0&rel=0&modestbranding=1&mute=1&loop=1&disablekb=1&enablejsapi=1"
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+    </iframe>
+</div>
+
+<body>
+
+
+    <div id="overlayDiv">
+        <!-- navBar -->
+        <nav id="myNavbar" class="navbar bg-none w-100 fixed-top" style=" top: 0px;">
+            <div class="container-fluid">
+                <a href="#" class="navbar-brand" style="margin-right: 100px; font-size:x-large;">Logo</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="mynavbar">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a id="news" onclick="nav_item_active(1)" class="nav-link" aria-current="page"
+                                href="#">活動資訊</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="trans" onclick="nav_item_active(2)" class="nav-link" aria-current="page"
+                                href="#">交通情報</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="forum" onclick="nav_item_active(2)" class="nav-link" aria-current="page"
+                                href="#">旅遊論壇</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="aboutus" onclick="nav_item_active(2)" class="nav-link" aria-current="page"
+                                href="#">關於我們</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input id="search_input" class="form-control me-2" type="search" placeholder="搜尋"
+                            aria-label="Search">
+                        <button id="search_btn" class="btn btn-outline-success" type="submit">
+                            <span class="material-icons" style="vertical-align: middle;">
+                                search
+                            </span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <!-- ========== -->
+        <div id="newBG" class="row">
+            <div class="homeCenter col-12 col-md-9 order-2 order-md-1">
+                <div id="groupNews" class="container">
+                    <div class="groupTitle">
+                        <h3>最新消息</h3>
+                    </div>
+                    <div class="row justify-content-center m-0 p-0">
+                        <div class="newsCol col-6 col-sm-6 col-md-6">
+
+                        </div>
+                        <div class="newsCol col-6 col-sm-6 col-md-6">
+
+                        </div>
+
+                    </div>
+                    <div class="row justify-content-center m-0 p-0">
+                        <div class="newsCol col-6 col-sm-6 col-md-6">
+
+                        </div>
+                        <div class="newsCol col-6 col-sm-6 col-md-6">
+
+                        </div>
+
+                    </div>
+                    <div class="row justify-content-center m-0 p-0">
+                        <div class="newsCol col-6 col-sm-6 col-md-6">
+
+                        </div>
+                        <div class="newsCol col-6 col-sm-6 col-md-6">
+
+                        </div>
+
+                    </div>
+                </div>
+                <div id="groupCity" class="container">
+                    <div class="groupTitle">
+                        <h3>縣市踩點</h3>
+                    </div>
+                    <div class="row justify-content-center m-0 p-0">
+                        <div class="cityCol col-6 col-sm-6 col-md-6 col-lg-3">
+                            <div class="cityDiv card">
+                                <img class="cityImg rounded card-img-top" src="./image/台中市.png">
+                                <div class="card-img-overlay">
+                                    <h3 class="card-title">台中市</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cityCol col-6 col-sm-6 col-md-6 col-lg-3">
+                            <div class="cityDiv card">
+                                <img class="cityImg rounded card-img-top" src="./image/台中市.png">
+                                <div class="card-img-overlay">
+                                    <h3 class="card-title">台中市</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cityCol col-6 col-sm-6 col-md-6 col-lg-3">
+                            <div class="cityDiv card">
+                                <img class="cityImg rounded card-img-top" src="./image/台中市.png">
+                                <div class="card-img-overlay">
+                                    <h3 class="card-title">台中市</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cityCol col-6 col-sm-6 col-md-6 col-lg-3">
+                            <div class="cityDiv card">
+                                <img class="cityImg rounded card-img-top" src="./image/台中市.png">
+                                <div class="card-img-overlay">
+                                    <h3 class="card-title">台中市</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center m-0 p-0">
+                        <div class="cityCol col-6 col-sm-6 col-md-6 col-lg-3">
+                            <div class="cityDiv card">
+                                <img class="cityImg rounded card-img-top" src="./image/台中市.png">
+                                <div class="card-img-overlay">
+                                    <h3 class="card-title">台中市</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cityCol col-6 col-sm-6 col-md-6 col-lg-3">
+                            <div class="cityDiv card">
+                                <img class="cityImg rounded card-img-top" src="./image/台中市.png">
+                                <div class="card-img-overlay">
+                                    <h3 class="card-title">台中市</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cityCol col-6 col-sm-6 col-md-6 col-lg-3">
+                            <div class="cityDiv card">
+                                <img class="cityImg rounded card-img-top" src="./image/台中市.png">
+                                <div class="card-img-overlay">
+                                    <h3 class="card-title">台中市</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cityCol col-6 col-sm-6 col-md-6 col-lg-3">
+                            <div class="cityDiv card">
+                                <img class="cityImg rounded card-img-top" src="./image/台中市.png">
+                                <div class="card-img-overlay">
+                                    <h3 class="card-title">台中市</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center m-0 p-0">
+                        <div class="cityCol col-6 col-sm-6 col-md-6 col-lg-3">
+                            <div class="cityDiv card">
+                                <img class="cityImg rounded card-img-top" src="./image/台中市.png">
+                                <div class="card-img-overlay">
+                                    <h3 class="card-title">台中市</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cityCol col-6 col-sm-6 col-md-6 col-lg-3">
+                            <div class="cityDiv card">
+                                <img class="cityImg rounded card-img-top" src="./image/台中市.png">
+                                <div class="card-img-overlay">
+                                    <h3 class="card-title">台中市</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cityCol col-6 col-sm-6 col-md-6 col-lg-3">
+                            <div class="cityDiv card">
+                                <img class="cityImg rounded card-img-top" src="./image/台中市.png">
+                                <div class="card-img-overlay">
+                                    <h3 class="card-title">台中市</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cityCol col-6 col-sm-6 col-md-6 col-lg-3">
+                            <div class="cityDiv card">
+                                <img class="cityImg rounded card-img-top" src="./image/台中市.png">
+                                <div class="card-img-overlay">
+                                    <h3 class="card-title">台中市</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="homeRight col-0 col-md-3 order-1 order-md-2">
+                <div class="wheatherDiv">
+                    <div class="row p-0 m-0">
+                        <div class="wheatherCol col-6 col-xl-4">
+                            <div class="wheatherBlock">台中市</div>
+                        </div>
+                        <div class="wheatherCol col-6 col-xl-4">
+                            <div class="wheatherBlock">24C</div>
+                        </div>
+                        <div class="wheatherCol col col-xl-4">
+                            <div class="wheatherBlock">
+                                <div class="row">
+                                    <div class="col-12">降雨機率:</div>
+                                    <div class="col">20%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <h1>Footer</h1>
+        </footer>
+    </div>
+
+    <script>
+        //背景影片重複撥放=====
+        var player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('youtubeIframe', {
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+        // 靜音
+        function onPlayerReady(event) {
+            event.target.mute();
+        }
+        // 如果影片結束，重新播放
+        function onPlayerStateChange(event) {
+            if (event.data === YT.PlayerState.ENDED) {
+                player.seekTo(0);
+                player.playVideo();
+            }
+        }
+        //=====
+
+        // nabar 移動超過55vw變色
+        window.addEventListener('scroll', function () {
+            var navbar = document.getElementById('myNavbar');
+            if (window.scrollY > 55 * window.innerWidth / 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+    </script>
+</body>
+
+</html>
