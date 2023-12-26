@@ -139,6 +139,15 @@
             /* background-color: aqua; */
             margin: 0px;
             padding: 50px;
+            position: fixed;
+        }
+
+        .homeLeft2 {
+            min-width: 300px;
+            height: 100%;
+            /* background-color: aqua; */
+            margin: 0px;
+            padding: 50px;
         }
 
         .homeRight {
@@ -152,62 +161,39 @@
         }
 
         .homeRight>div {
-            width: 100%;
-            max-width: 800px;
-        }
-
-        .memberInfo {
-            width: 100%;
-            max-width: 800px;
-            height: 300px;
-            padding: 0px;
-            /* background-color: blueviolet; */
-            display: inline-flex;
-            margin: 0 auto;
-        }
-
-        .memberImg {
-            aspect-ratio: 1/1;
+            width: 800px;
+            background-color: yellowgreen;
             margin: 0px;
-            padding: 10px;
-            /* background-color: blue; */
-            overflow: hidden;
+            padding: 0px;
+            margin-top: 30px;
+        }
+
+        .dataCon {
+            width: calc(100% - 20px);
+            height: 200px;
+            background-color: white;
+            margin: 10px;
+            border-radius: 5px;
             display: flex;
-            align-items: center;
+            /* align-items: center; */
+            /* justify-content: center; */
         }
 
-        .memberImg>img {
-            max-width: 100%;
-            max-height: 100%;
-            margin: 0px;
-            aspect-ratio: 1/1;
-            outline: 1px solid rgba(0, 0, 0, 0.2);
-        }
-
-        .memberLV {
-            margin: 0px;
-            padding: 0px;
-            /* width: calc(100% - 300px); */
-            width: 100%;
+        .imgCon {
             height: 100%;
-            background-color: aquamarine;
+            aspect-ratio: 16/9;
+            padding: 0px;
+            margin: 5px;
         }
 
-        .membrForm {
-            margin: 0px;
-            padding: 40px;
-            height: auto;
-            width: 100%;
-            max-width: 800px;
-            /* border: 1px solid black; */
-            display: flex;
-            justify-content: center;
+        .textCon {
+            padding: 5px;
+            display: -webkit-box;
+            -webkit-line-clamp: 8;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
-
-        .likeCheck>.form-check {
-            width: 150px;
-        }
-
     </style>
 
 
@@ -268,64 +254,30 @@
                 <li>上架活動</li>
             </ul>
         </div>
-        <div class="homeRight">
-            <div class="m-0 p-0 infoCon">
-                <div class="memberInfo">
-                    <div class="memberImg">
-                        <img class="rounded-circle img-fluid" src="./image/IMG_0987.JPG" alt="">
-                    </div>
-                    <div class="memberLV">
+        <div class="homeLeft2">
 
+        </div>
+        <div class="homeRight">
+            <div class="infoCon">
+                <div class="dataCon">
+                    <div class="imgCon">
+                        <img src="./image/2023聖誕節.jpg" class="img-fluid">
+                    </div>
+                    <div class="textCon">
+                        台灣，坐落於亞洲東部，擁有多樣風景與豐富文化。山川起伏，美不勝收，從高山峻嶺到沙灘海岸，景觀多元。台灣以多元的美食聞名，夜市繁華熱鬧，成為品嚐各地風味的絕佳場所。在這片寶島上，傳統文化與現代生活共存，廟宇、古蹟與現代建築共構城市風貌。友善的台灣人民熱情好客，讓遊客感受到溫暖的人情味。台灣，一個充滿活力、兼具傳統和現代風情的迷人地方。台灣，坐落於亞洲東部，擁有多樣風景與豐富文化。山川起伏，美不勝收，從高山峻嶺到沙灘海岸，景觀多元。台灣以多元的美食聞名，夜市繁華熱鬧，成為品嚐各地風味的絕佳場所。在這片寶島上，傳統文化與現代生活共存，廟宇、古蹟與現代建築共構城市風貌。友善的台灣人民熱情好客，讓遊客感受到溫暖的人情味。台灣，一個充滿活力、兼具傳統和現代風情的迷人地方。
                     </div>
                 </div>
-                <div class="favorList">
-                    <form>
-                        <div class="mb-3">
-                            <label for="name" class="form-label">姓名/暱稱/名稱：</label>
-                            <input type="text" class="form-control" id="name">
-                        </div>
-                        <div class="mb-3">
-                            <label for="mail" class="form-label">Mail：</label>
-                            <input type="email" class="form-control" id="mail">
-                        </div>
-                        <div class="mb-3">
-                            <label for="tel" class="form-label">電話：</label>
-                            <input type="tel" class="form-control" id="tel">
-                        </div>
-                        <div class="mb-3">
-                            <label for="birth" class="form-label">生日：</label>
-                            <input type="date" class="form-control" id="birth">
-                        </div>
-                        <fieldset class="mb-3">
-                            <legend class="form-label">興趣：</legend>
-                            <div class="d-inline-flex likeCheck">
-                                <div class="m-0 form-check">
-                                    <input type="checkbox" class="form-check-input" id="01">
-                                    <label for="01" class="form-check-label">休閒旅遊</label>
-                                </div>
-                                <div class="m-0 form-check">
-                                    <input type="checkbox" class="form-check-input" id="02">
-                                    <label for="02" class="form-check-label">藝文活動</label>
-                                </div>
-                                <div class="m-0 form-check">
-                                    <input type="checkbox" class="form-check-input" id="03">
-                                    <label for="03" class="form-check-label">親子</label>
-                                </div>
-                            </div>
-                            <br>
-                            <div class="d-inline-flex likeCheck">
-                                <div class="m-0 form-check">
-                                    <input type="checkbox" class="form-check-input" id="04">
-                                    <label for="04" class="form-check-label">文創/市集</label>
-                                </div>
-                                <div class="m-0 form-check">
-                                    <input type="checkbox" class="form-check-input" id="05">
-                                    <label for="05" class="form-check-label">博物館/美術館</label>
-                                </div>
-                            </div>
-                        </fieldset>
-                        <button type="submit" class="btn btn-primary">提交</button>
-                    </form>
+                <div class="dataCon">
+
+                </div>
+                <div class="dataCon">
+
+                </div>
+                <div class="dataCon">
+
+                </div>
+                <div class="dataCon">
+
                 </div>
             </div>
         </div>
@@ -333,7 +285,7 @@
 
     <script>
         $(document).ready(function () {
-            
+
 
 
 
