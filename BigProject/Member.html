@@ -208,6 +208,24 @@
             width: 150px;
         }
 
+        .aa {
+            text-decoration: none;
+            color: black;
+        }
+
+        .aa:hover {
+            color: violet;
+        }
+
+        ul li,
+        ol li {
+            list-style-type: none;
+        }
+
+        li {
+            margin-left: -10px;
+        }
+
     </style>
 
 
@@ -254,17 +272,17 @@
     </nav>
     <div class="bgCon">
         <div class="homeLeft">
-            <h6>一般會員</h6>
+            <h5>一般會員</h5>
             <ul>
-                <li><a id="btn" href="./Member.html">基本資料</a></li>
-                <li><a id="btn" href="./Love.html">我的收藏</a></li>
-                <li><a id="btn" href="./Mimi.html">隱私設定</a></li>
+                <li><a class="aa" href="./Member.html">基本資料</a></li>
+                <li><a class="aa" href="./Love.html">我的收藏</a></li>
+                <li><a class="aa" href="./Mimi.html">隱私設定</a></li>
             </ul>
             <hr>
-            <h6>廠商專區</h6>
+            <h5>廠商專區</h5>
             <ul>
                 <li>基本資料</li>
-                <li>活動列表</li>
+                <li><a class="aa" href="./List.html">活動列表</a></li>
                 <li>上架活動</li>
             </ul>
         </div>
