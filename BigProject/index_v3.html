@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <!-- Google Icon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- SimpleBar-->
+    <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+    <!-- 背景影片css -->
+    <link rel="stylesheet" href="Tools/Bg_YTiframe.css">
+    <!-- 背景影片js -->
+    <script src="https://www.youtube.com/iframe_api" defer></script>
+    <script src="Tools/Bg_YTiframe.js" defer></script>
+    <!-- Gruop_City.css -->
+    <link rel="stylesheet" href="Tools/Gruop_City.css">
+    <!-- Group_News.css -->
+    <link rel="stylesheet" href="Tools/Group_News.css">
+    <!-- NavBar.js -->
+    <script src="Tools/NavBar.js" defer></script>
+    <!-- NavBar.css -->
+    <link rel="stylesheet" href="Tools/NavBar.css">
+    <!-- 引入 SimpleBar 的 CSS 文件 -->
+    <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+    <!-- 引入 SimpleBar 的 JavaScript 文件 -->
+    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        #overlayDiv {
+            padding-top: 40vw;
+        }
+
+        #newBG {
+            width: calc(100% - 10px);
+            margin: 5px auto;
+            margin-top: 10px;
+            padding: 0px;
+            /* border: solid 2px; */
+        }
+
+        .BGC_Gray {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .BGC_Green {
+            background-color: rgba(0, 150, 0, 0.3);
+        }
+
+        /* ============================================= */
+
+        .navbar {
+            transition: background-color 0.3s ease-in-out;
+            /* 添加過渡效果 */
+        }
+
+        a.nav-link {
+            color: aliceblue;
+            text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        a.nav-link:hover {
+            color: white;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .navbar-collapse {
+            /* background-color: aquamarine; */
+            width: 200px;
+            margin-left: auto;
+            margin-right: 10px;
+            margin-top: -1px;
+            /* padding: 5px; */
+            background-color: rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+        }
+
+        .scrolledV2 {
+            background-color: white;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-top: 0px;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+        }
+
+        .scrolledV2>ul .nav-item>a {
+            color: rgba(0, 0, 0, 0.7);
+            text-shadow: 0px 0px 5px rgba(0, 0, 0, 0);
+        }
+
+        .scrolledV2>ul .nav-item>a:hover {
+            color: plum;
+        }
+
+        .navbar-toggler {
+            background-color: white;
+            margin-right: 10px;
+        }
+
+        .navbar-toggler:focus {
+            outline: none;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-width: 1px;
+            border-style: solid;
+        }
+
+        #mynavbarCon {
+            width: 100vw;
+            margin: 0px;
+            padding: 5px;
+            padding-right: 10px;
+            border: 1px solid rgba(0, 0, 0, 0);
+        }
+
+        .scrolled {
+            background-color: white;
+            /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+            border: 1px solid rgba(0, 0, 0, 0.1) !important;
+            /* 滾動高度超過 35vw 時的背景顏色 */
+        }
+
+        .collapseCon {
+            margin-left: auto;
+            margin-right: 0px;
+        }
+
+        /* ============================================= */
+
+        div.groupTitle {
+            width: 100%;
+            margin: 0px;
+            margin-bottom: 5px;
+            padding: 5px;
+            text-align: left;
+            justify-content: center;
+            align-items: center;
+            border-bottom: solid 0.5px rgba(0, 0, 0, 0.3);
+        }
+
+        div.groupTitle>h3 {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        div.homeCenter {
+            margin: 0px;
+            padding: 0px;
+            max-width: 1000px;
+            min-width: 500px;
+            /* background-color: blue; */
+            /* text-align: center;
+            justify-content: center;
+            align-items: center; */
+            /* display: flex; */
+        }
+
+        div.classIcon {
+            margin: 5px;
+            padding: 0px;
+            /* height: 90px; */
+            min-width: calc(20% - 10px);
+            aspect-ratio: 1/1;
+            border-radius: 5px;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            display: flex;
+        }
+
+        /* =================================================== */
+
+        div.homeRight {
+            margin: 0px;
+            padding: 0px;
+            max-width: 400px;
+            /* min-width: 250px; */
+        }
+
+        @media (max-width: 768px) {
+            .homeRight {
+                display: none;
+            }
+
+            .fixedDiv {
+                display: block !important;
+            }
+        }
+
+        div.weatherDiv {
+            width: 100%;
+            height: 230px;
+            margin: 0px;
+            padding: 5px;
+            border: solid 2px rgba(0, 0, 0, 0.1);
+            /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); */
+            border-radius: 5px;
+        }
+
+        div.weatherCol,
+        div.weatherColTop {
+            padding: 0;
+            margin: 0;
+        }
+
+        div.weatherColSm {
+            padding: 0;
+            margin: 0;
+            display: none;
+        }
+
+        @media (max-width: 970px) {
+            .weatherColTop {
+                display: none;
+            }
+
+            .weatherColSm {
+                display: block !important;
+            }
+        }
+
+        @media (min-width: 1400px) {
+            div.weatherDiv {
+                height: 120px;
+            }
+        }
+
+        div.weatherBlock {
+            min-width: 100px;
+            height: 100px;
+            margin: 5px;
+            border: solid 2px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            /* box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); */
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+
+        div.couponGroup {
+            width: 100%;
+            height: 1200px;
+            margin: 0px;
+            margin-top: 10px;
+            padding: 5px;
+            border: solid 2px rgba(0, 0, 0, 0.1);
+            /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); */
+            border-radius: 5px;
+            /* background-color: rgba(0, 0, 0, 0.1); */
+        }
+
+        div.couponCon {
+            height: 300px;
+            border: solid 2px rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            margin: 5px;
+            padding: 5px;
+            background-color: white;
+            overflow: auto;
+        }
+
+        /* ==================================================== */
+        /* offcanvas */
+
+        .offcanvas {
+            background-color: #ccc;
+        }
+
+        .fixedDiv {
+            position: fixed;
+            top: 50%;
+            right: 0px;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 100px;
+            background-color: #ccc;
+            padding: 0px;
+            /* 目前圖層最高 */
+            z-index: 3;
+            border-bottom-left-radius: 10px;
+            border-top-left-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        .OffcanBtn {
+            width: 100%;
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+            background: none;
+            border: none;
+            border-radius: 0px;
+            border-bottom-left-radius: 10px;
+            border-top-left-radius: 10px;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .OffcanBtn > img {
+            /* background-color: aqua; */
+        }
+
+        .OffcanBtn:hover {
+            background-color: plum !important;
+        }
+
+        div.weatherDivOff {
+            width: 100%;
+            height: 110px;
+            margin: 0px;
+            padding: 0px;
+            border: solid 2px rgba(0, 0, 0, 0.1);
+            /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); */
+            border-radius: 5px;
+        }
+
+        div.weatherColOff {
+            margin: 0px;
+            padding: 0px;
+
+        }
+
+        /* ==================================================== */
+
+        footer {
+            height: 200px;
+        }
+
+        /* ==================================================== */
+    </style>
+</head>
+<div id="iframeContainer">
+    <iframe id="youtubeIframe"
+        src="https://www.youtube.com/embed/wIf-HN15URA?autoplay=1&controls=0&showinfo=0&rel=0&modestbranding=1&mute=1&loop=1&disablekb=1&enablejsapi=1"
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+    </iframe>
+</div>
+
+<body>
+
+
+    <div id="overlayDiv">
+        <!-- navBar -->
+        <nav id="myNavbar" class="navbar bg-none w-100 fixed-top m-0 p-0" style=" top: 0px;">
+            <div class="container-fluid m-0 p-0">
+                <div class="row m-0 p-0">
+                    <div id="mynavbarCon" class="col-12 d-flex justify-content-between align-items-center">
+                        <a href="#" class="navbar-brand" style="font-size:x-large;">Logo</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#mynavbar" aria-controls="navbarSupportedContent" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    <div class="collapseCon">
+                        <div class="collapse navbar-collapse" id="mynavbar">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a id="news" onclick="nav_item_active()" class="nav-link" aria-current="page"
+                                        href="#">活動資訊</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a id="trans" onclick="nav_item_active()" class="nav-link" aria-current="page"
+                                        href="#">交通情報</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a id="forum" onclick="nav_item_active()" class="nav-link" aria-current="page"
+                                        href="#">旅遊論壇</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a id="aboutus" onclick="nav_item_active()" class="nav-link" aria-current="page"
+                                        href="#">關於我們</a>
+                                </li>
+                            </ul>
+                            <form class="d-flex" role="search">
+                                <input id="search_input" class="form-control me-2" type="search" placeholder="搜尋"
+                                    aria-label="Search">
+                                <button id="search_btn" class="btn btn-outline-success" type="submit">
+                                    <span class="material-icons" style="vertical-align: middle;">
+                                        search
+                                    </span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- ========== -->
+    <div id="newBG" class="row justify-content-center">
+
+        <!-- ---------- -->
+        <div id="myOffcanvas" class="fixedDiv">
+            <a class="btn btn-primary OffcanBtn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+                aria-controls="offcanvasExample">
+                <img src="image/OffcanvasIcon.png" class="img-fluid">
+            </a>
+        </div>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample"
+            aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="weatherDivOff">
+                    <div class="row p-0 m-0">
+                        <div class="weatherColOff col-4">
+                            <div class="weatherBlock">台中市</div>
+                        </div>
+                        <div class="weatherColOff col-4">
+                            <div class="weatherBlock">24C</div>
+                        </div>
+                        <div class="weatherColOff col-4">
+                            <div class="weatherBlock">
+                                降雨機率：20%
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="couponGroup" data-simplebar>
+                    <div class="couponCon">
+                        晶英旅店 2/30 入住，雙人房一晚只要 50 元!!!
+                    </div>
+                    <div class="couponCon">
+                        晶英旅店 2/30 入住，雙人房一晚只要 50 元!!!
+                    </div>
+                    <div class="couponCon">
+                        晶英旅店 2/30 入住，雙人房一晚只要 50 元!!!
+                    </div>
+                    <div class="couponCon">
+                        晶英旅店 2/30 入住，雙人房一晚只要 50 元!!!
+                    </div>
+                    <div class="couponCon">
+                        晶英旅店 2/30 入住，雙人房一晚只要 50 元!!!
+                    </div>
+                    <div class="couponCon">
+                        晶英旅店 2/30 入住，雙人房一晚只要 50 元!!!
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ---------- -->
+        <div class="homeCenter col-12 col-md-9 order-2 order-md-1">
+            <div class="row m-0 p-0 w-100">
+                <div class="col m-0 p-0">
+                    <div class="classIcon BGC_Green">休閒旅遊</div>
+                </div>
+                <div class="col m-0 p-0">
+                    <div class="classIcon BGC_Green">藝文活動</div>
+                </div>
+                <div class="col m-0 p-0">
+                    <div class="classIcon BGC_Green">親子</div>
+                </div>
+                <div class="col m-0 p-0">
+                    <div class="classIcon BGC_Green">文創/市集</div>
+                </div>
+                <div class="col m-0 p-0">
+                    <div class="classIcon BGC_Green">博物館/美術館</div>
+                </div>
+            </div>
+            <!-- ---------- -->
+            <div id="groupNews" class="">
+                <div class="groupTitle">
+                    <h3>最新消息</h3>
+                </div>
+
+                <div class="newsCon">
+                    <div class="newsImgCon">
+                        <img class="newsImg" src="./image/2023聖誕節.jpg" alt="">
+                    </div>
+                    <div class="newsTextCon">
+                        <div class="newsTextBgR">
+                            <div class="newsText">
+                                台灣，坐落於亞洲東部，擁有多樣風景與豐富文化。山川起伏，美不勝收，從高山峻嶺到沙灘海岸，景觀多元。台灣以多元的美食聞名，夜市繁華熱鬧，成為品嚐各地風味的絕佳場所。在這片寶島上，傳統文化與現代生活共存，廟宇、古蹟與現代建築共構城市風貌。友善的台灣人民熱情好客，讓遊客感受到溫暖的人情味。台灣，一個充滿活力、兼具傳統和現代風情的迷人地方。台灣，坐落於亞洲東部，擁有多樣風景與豐富文化。山川起伏，美不勝收，從高山峻嶺到沙灘海岸，景觀多元。台灣以多元的美食聞名，夜市繁華熱鬧，成為品嚐各地風味的絕佳場所。在這片寶島上，傳統文化與現代生活共存，廟宇、古蹟與現代建築共構城市風貌。友善的台灣人民熱情好客，讓遊客感受到溫暖的人情味。台灣，一個充滿活力、兼具傳統和現代風情的迷人地方。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="newsCon">
+                    <div class="newsTextCon">
+                        <div class="newsTextBgL">
+                            <div class="newsText">
+                                台灣，坐落於亞洲東部，擁有多樣風景與豐富文化。山川起伏，美不勝收，從高山峻嶺到沙灘海岸，景觀多元。台灣以多元的美食聞名，夜市繁華熱鬧，成為品嚐各地風味的絕佳場所。在這片寶島上，傳統文化與現代生活共存，廟宇、古蹟與現代建築共構城市風貌。友善的台灣人民熱情好客，讓遊客感受到溫暖的人情味。台灣，一個充滿活力、兼具傳統和現代風情的迷人地方。台灣，坐落於亞洲東部，擁有多樣風景與豐富文化。山川起伏，美不勝收，從高山峻嶺到沙灘海岸，景觀多元。台灣以多元的美食聞名，夜市繁華熱鬧，成為品嚐各地風味的絕佳場所。在這片寶島上，傳統文化與現代生活共存，廟宇、古蹟與現代建築共構城市風貌。友善的台灣人民熱情好客，讓遊客感受到溫暖的人情味。台灣，一個充滿活力、兼具傳統和現代風情的迷人地方。
+                            </div>
+                        </div>
+                    </div>
+                    <div class="newsImgCon">
+                        <img class="newsImg" src="./image/2023聖誕節.jpg" alt="">
+                    </div>
+                </div>
+
+            </div>
+            <!-- ---------- -->
+            <div id="groupCity" class="">
+                <div class="groupTitle">
+                    <h3>縣市踩點</h3>
+                </div>
+                <div class="row justify-content-center m-0 p-0">
+                    <div class="col-12 col-lg-8 m-0 p-0">
+                        <div class="row justify-content-center m-0 p-0">
+                            <div class="cityCol col-6">
+                                <div class="cityDiv card">
+                                    <img class="cityImg rounded card-img-top" src="./image/台中市.png">
+                                    <div class="card-img-overlay">
+                                        <h3 class="card-title">台中市</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cityCol col-6">
+                                <div class="cityDiv card">
+                                    <img class="cityImg rounded card-img-top" src="./image/台中市.png">
+                                    <div class="card-img-overlay">
+                                        <h3 class="card-title">台中市</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cityCol col-0 col-lg-4">
+                        <div class="cityDiv card">
+                            <img class="cityImgV2 rounded card-img-top" src="./image/台中市.png">
+                            <div class="card-img-overlay">
+                                <h3 class="card-title">台中市</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row justify-content-center m-0 p-0">
+                    <div class="cityColV2 col-4">
+                        <div class="cityDiv card">
+                            <img class="cityImg rounded card-img-top" src="./image/台中市.png">
+                            <div class="card-img-overlay">
+                                <h3 class="card-title">台中市</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cityColV2 col-4">
+                        <div class="cityDiv card">
+                            <img class="cityImg rounded card-img-top" src="./image/台中市.png">
+                            <div class="card-img-overlay">
+                                <h3 class="card-title">台中市</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cityColV2 col-4">
+                        <div class="cityDiv card">
+                            <img class="cityImg rounded card-img-top" src="./image/台中市.png">
+                            <div class="card-img-overlay">
+                                <h3 class="card-title">台中市</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- ---------- -->
+
+        <div class="homeRight col-0 col-md-3 order-1 order-md-2">
+            <div class="weatherDiv">
+                <div class="row p-0 m-0">
+                    <div class="weatherColTop col-6 col-xxl-4">
+                        <div class="weatherBlock">台中市</div>
+                    </div>
+                    <div class="weatherColTop col-6 col-xxl-4">
+                        <div class="weatherBlock">24C</div>
+                    </div>
+                    <div class="weatherColSm col-12">
+                        <div class="weatherBlock">台中市：24C</div>
+                    </div>
+                    <div class="weatherCol col col-xxl-4">
+                        <div class="weatherBlock">
+                            降雨機率：20%
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="couponGroup" data-simplebar>
+                <div class="couponCon">
+                    晶英旅店 2/30 入住，雙人房一晚只要 50 元!!!
+                </div>
+                <div class="couponCon">
+                    晶英旅店 2/30 入住，雙人房一晚只要 50 元!!!
+                </div>
+                <div class="couponCon">
+                    晶英旅店 2/30 入住，雙人房一晚只要 50 元!!!
+                </div>
+                <div class="couponCon">
+                    晶英旅店 2/30 入住，雙人房一晚只要 50 元!!!
+                </div>
+                <div class="couponCon">
+                    晶英旅店 2/30 入住，雙人房一晚只要 50 元!!!
+                </div>
+                <div class="couponCon">
+                    晶英旅店 2/30 入住，雙人房一晚只要 50 元!!!
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="BGC_Gray">
+        <h1>Footer</h1>
+    </footer>
+
+
+    <script>
+        $(document).ready(function () {
+            $('#myOffcanvas').on('click', function () {
+                if (!$('#offcanvasExample').hasClass('show')) {
+                    $('.fixedDiv').animate({ right: '350px' }, 300);
+                    $('.fixedDiv').animate({ right: '0' }, 100);
+                }
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>

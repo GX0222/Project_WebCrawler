@@ -15,6 +15,8 @@
 
     <!-- Google Icon -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <!-- SimpleBar-->
     <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
     <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
@@ -161,39 +163,75 @@
         }
 
         .homeRight>div {
-            width: 800px;
-            background-color: yellowgreen;
+            max-width: 1040px;
+            /* background-color: yellowgreen; */
             margin: 0px;
             padding: 0px;
             margin-top: 30px;
         }
 
-        .dataCon {
-            width: calc(100% - 20px);
-            height: 200px;
-            background-color: white;
-            margin: 10px;
-            border-radius: 5px;
-            display: flex;
-            /* align-items: center; */
-            /* justify-content: center; */
+        .dataRow {
+            display: inline-flex;
+            flex-wrap: wrap;
         }
+
+        .dataCon {
+            height: 300px;
+            width: 260px;
+            background-color: rgba(201, 201, 201, 0.909);
+            border: 2px solid;
+        }
+
+        .dataCon::after {
+            content: "\e87d";
+            font-family: 'Material Icons';
+            display: inline-block;
+            font-size: 24px;
+            color: violet;
+            margin-top: -260px;
+            margin-left: 220px;
+            height: 24px;
+            width: 24px;
+            /* background-color: aqua; */
+        }
+
+        .dataCon::after:hover {
+            color: aliceblue;
+        }
+
 
         .imgCon {
-            height: 100%;
-            aspect-ratio: 16/9;
+            height: 135px;
+            width: 240px;
+            /* aspect-ratio: 16/9; */
             padding: 0px;
-            margin: 5px;
+            margin: 10px;
+            /* background-color: lightseagreen; */
+            border-top-left-radius: 5px;
+            /* overflow: hidden; */
         }
 
-        .textCon {
-            padding: 5px;
-            display: -webkit-box;
-            -webkit-line-clamp: 8;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-overflow: ellipsis;
+        .imgCon>img {
+            height: 100%;
+            width: 100%;
+            padding: 0px;
+            margin: 0px;
+            border-radius: 5px;
+            /* object-fit: cover; */
         }
+
+        .dataTitle {
+            font-size: x-large;
+            margin: 0px;
+            padding: 0px;
+            height: 40px;
+            background-color: aqua;
+            text-align: center;
+        }
+
+        .dataTime {}
+
+        .dataPosi {}
     </style>
 
 
@@ -259,26 +297,27 @@
         </div>
         <div class="homeRight">
             <div class="infoCon">
-                <div class="dataCon">
-                    <div class="imgCon">
-                        <img src="./image/2023聖誕節.jpg" class="img-fluid">
+                <div class="dataRow m-0 p-0">
+                    <div class="dataCon m-0 p-0">
+                        <div class="imgCon">
+                            <img src="./image/2023聖誕節.jpg" class="">
+                        </div>
+                        <div class="dataTitle">
+                            2023聖誕節
+                        </div>
+                        <div class="dataTime">
+                            1月29日 ~ 2月31日
+                            <span class="material-symbols-outlined">
+                                heart_plus
+                            </span>
+                        </div>
+                        <div class="dataPosi">
+                            地點：台中市西區健行路1049號金典綠園道商場三樓
+                        </div>
                     </div>
-                    <div class="textCon">
-                        台灣，坐落於亞洲東部，擁有多樣風景與豐富文化。山川起伏，美不勝收，從高山峻嶺到沙灘海岸，景觀多元。台灣以多元的美食聞名，夜市繁華熱鬧，成為品嚐各地風味的絕佳場所。在這片寶島上，傳統文化與現代生活共存，廟宇、古蹟與現代建築共構城市風貌。友善的台灣人民熱情好客，讓遊客感受到溫暖的人情味。台灣，一個充滿活力、兼具傳統和現代風情的迷人地方。台灣，坐落於亞洲東部，擁有多樣風景與豐富文化。山川起伏，美不勝收，從高山峻嶺到沙灘海岸，景觀多元。台灣以多元的美食聞名，夜市繁華熱鬧，成為品嚐各地風味的絕佳場所。在這片寶島上，傳統文化與現代生活共存，廟宇、古蹟與現代建築共構城市風貌。友善的台灣人民熱情好客，讓遊客感受到溫暖的人情味。台灣，一個充滿活力、兼具傳統和現代風情的迷人地方。
-                    </div>
+                    
                 </div>
-                <div class="dataCon">
-
-                </div>
-                <div class="dataCon">
-
-                </div>
-                <div class="dataCon">
-
-                </div>
-                <div class="dataCon">
-
-                </div>
+               
             </div>
         </div>
     </div>
