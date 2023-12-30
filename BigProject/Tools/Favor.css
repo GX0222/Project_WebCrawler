@@ -1,0 +1,149 @@
+div.center {
+    padding: 0px;
+    margin: 0px;
+    margin-top: 50px;
+}
+
+div.info {
+    padding: 0px;
+    margin: 0px;
+    height: 500px;
+}
+
+/*********************************info nav**********************************************/
+
+#infoUlbar {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#infoUlbar h4 {
+    color: rgba(152, 115, 78, 0.4);
+}
+
+.ulName {
+    display: inline-block;
+    margin: 15px;
+    font-size: 18px;
+}
+
+.ulName a {
+    text-decoration: none;
+}
+
+.ulName a:link {
+    color: rgb(0, 0, 0);
+}
+
+.ulName a:visited {
+    color: rgb(0, 0, 0);
+}
+
+.ulName a:hover {
+    color: white;
+    border-radius: 10px;
+    padding: 6px;
+    background-color: rgba(152, 115, 78, 0.4);
+}
+
+.nav-pills>li>a.active {
+    color: #ffffff !important;
+    background-color: rgba(152, 115, 78, 0.4) !important;
+}
+
+
+/*********************************Datalis**********************************************/
+
+.dataList {
+    margin: 0px;
+    padding: 0px;
+    margin-bottom: 30px;
+    border-bottom: solid rgba(110, 110, 110, 0.267) 1px;
+    height: 235px;
+    list-style-type: none;
+}
+
+div.dataDay {
+    margin: 0px;
+    padding: 0px;
+    height: 25px;
+    font-family: monospace;
+    color: rgba(94, 66, 40, 0.648);
+}
+
+div.dataImg {
+    margin: 0px;
+    padding: 0px;
+    height: 180px;
+    width: 320px;
+    overflow: hidden;
+}
+
+div.dataImg > img {
+    height: 100%;
+    
+}
+
+
+
+.dataList a {
+    text-decoration: none;
+    font-size: 20px;
+    display: inline-flex;
+}
+
+.dataList a:link {
+    color: #000000;
+}
+
+.dataList a:visited {
+    color: #000000;
+}
+
+.dataList a:hover {
+    color: #1C6EA4;
+}
+
+.page-item a:link {
+    color: #585858;
+}
+
+.page-item a:visited {
+    color: #7d7c7c;
+}
+
+.page-item a:hover {
+    color: #30a8f7;
+}
+
+/*********************************footer**********************************************/
+
+.footer {
+    background: rgba(152, 115, 78, 0.4);
+    padding: 10px;
+    padding-top: 20px;
+}
+
+.ftinfo {
+    color: #ffffff;
+    padding-left: 1rem;
+}
+
+.ftinfo a {
+    text-decoration: none;
+    color: #bcbaba;
+}
+
+.ftinfo a:hover {
+    color: rgb(0, 0, 0);
+}
+
+.st {
+    text-align: center;
+    background: rgba(112, 87, 63, 0.4);
+    padding: 8px;
+    color: #ffffff;
+
+}

@@ -18,129 +18,13 @@
     <!-- SimpleBar-->
     <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
     <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
-
+    <!-- NavBar -->
+    <link rel="stylesheet" href="./Tools/NavBar_2.css">
+    <!-- Css -->
+    <link rel="stylesheet" href="./Tools/Membe.css">
+    <!-- Color -->
+    <link rel="stylesheet" href="./Tools/Color.css">
     <style>
-        /* NavBar */
-        .navbar {
-            transition: background-color 0.3s ease-in-out;
-            /* 添加過渡效果 */
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            height: 50px;
-            min-width: 220px;
-        }
-
-        #myNavbar>div>a {
-            margin: 0px;
-            margin-left: 10px;
-        }
-
-        a.nav-link {
-            /* color: aliceblue; */
-            /* text-shadow: 0px 0px 5px rgba(0, 0, 0, 1); */
-            border-radius: 5px;
-            text-align: center;
-        }
-
-        a.nav-link:hover {
-            color: white;
-            background-color: rgba(0, 0, 0, 0.4);
-        }
-
-        #mynavbar {
-            padding: 0px;
-        }
-
-        .navbar-collapse {
-            margin: 0px;
-            padding: 0px;
-            margin-top: -1px;
-            height: 100%;
-            /* background-color: rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(0, 0, 0, 0);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            border-radius: 5px; */
-        }
-
-        .navbar-toggler {
-            background-color: white;
-            margin-right: 5px;
-            height: 39px;
-        }
-
-        .navbar-toggler:focus {
-            outline: none;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-width: 1px;
-            border-style: solid;
-        }
-
-        .navbar-toggler:hover {
-            outline: none;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            border-width: 1px;
-            border-style: solid;
-        }
-
-        #mynavbar>.memberCon {
-            margin: 0px;
-            padding: 0px;
-            height: 100%;
-            /* background-color: aquamarine; */
-            /* border: 1px solid rgba(0, 0, 0, 1); */
-        }
-
-        .memberConMd {
-            margin: 0px;
-            padding: 0px;
-            height: 100%;
-            /* background-color: aquamarine; */
-            /* border: 1px solid rgba(0, 0, 0, 1); */
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .nameCon {
-            margin: 0px;
-            /* margin-right: 3px; */
-            padding: 0px;
-            height: 100%;
-            /* background-color: aqua; */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .nameCon>img {
-            max-width: calc(100% - 10px);
-            max-height: calc(100% - 10px);
-            margin: 5px;
-            aspect-ratio: 1/1;
-            outline: 1px solid rgba(0, 0, 0, 0.2);
-        }
-
-        /* ===== */
-
-        .bgCon {
-            margin: 0px;
-            margin-top: 50px;
-            padding: 0px;
-            min-width: 500px;
-            width: 100%;
-            height: 1000px;
-            /* border: 1px solid black; */
-            display: inline-flex;
-        }
-
-        .homeLeft {
-            min-width: 300px;
-            height: 100%;
-            /* background-color: aqua; */
-            margin: 0px;
-            padding: 50px;
-        }
-
         .homeRight {
             height: 100%;
             width: 100%;
@@ -206,7 +90,7 @@
 
         .likeCheck>.form-check {
             width: 150px;
-        }
+        }     
 
     </style>
 
@@ -217,17 +101,18 @@
 <body>
     <nav id="myNavbar" class="navbar navbar-expand-md bg-none w-100 fixed-top m-0 p-0" style=" top: 0px;">
         <div class="container-fluid m-0 p-0 h-100">
-            <a href="#" class="navbar-brand" style="font-size:x-large;">Logo</a>
+            <a href="./index.html" class="navbar-brand" style="font-size:x-large;">Logo</a>
             <div class="memberConMd d-flex d-md-none">
                 <div class="nameCon">
-                    <img class="rounded-circle img-fluid" src="./image/IMG_0987.JPG" alt="">
+                    <a href="./Member.html">
+                        <img class="rounded-circle img-fluid" src="./image/IMG_0987.JPG" alt="">
+                    </a>
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
-
             <div class="collapse navbar-collapse" id="mynavbar">
                 <ul class="navbar-nav me-auto mb-0">
                     <li class="nav-item">
@@ -246,7 +131,9 @@
                 </ul>
                 <div class="memberCon d-none d-md-flex">
                     <div class="nameCon">
-                        <img class="rounded-circle img-fluid" src="./image/IMG_0987.JPG" alt="">
+                        <a href="./Member.html">
+                            <img class="rounded-circle img-fluid" src="./image/IMG_0987.JPG" alt="">
+                        </a>
                     </div>
                 </div>
             </div>
@@ -254,17 +141,16 @@
     </nav>
     <div class="bgCon">
         <div class="homeLeft">
-            <h6>一般會員</h6>
+            <h5>會員專區</h5>
             <ul>
-                <li><a id="btn" href="./Member.html">基本資料</a></li>
-                <li><a id="btn" href="./Love.html">我的收藏</a></li>
-                <li><a id="btn" href="./Mimi.html">隱私設定</a></li>
+                <li><a class="aa" href="./Member.html">基本資料</a></li>
+                <li><a class="aa" href="./Love.html">我的收藏</a></li>
+                <li><a class="aa" href="./Mimi.html">隱私設定</a></li>
             </ul>
             <hr>
-            <h6>廠商專區</h6>
+            <h5>活動專區</h5>
             <ul>
-                <li>基本資料</li>
-                <li>活動列表</li>
+                <li><a class="aa" href="./List.html">我的活動</a></li>
                 <li>上架活動</li>
             </ul>
         </div>

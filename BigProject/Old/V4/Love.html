@@ -20,14 +20,137 @@
     <!-- SimpleBar-->
     <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
     <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
-    <!-- NavBar -->
-    <link rel="stylesheet" href="./Tools/NavBar_2.css">
-    <!-- Css -->
-    <link rel="stylesheet" href="./Tools/Membe.css">
-    <!-- Color -->
-    <link rel="stylesheet" href="./Tools/Color.css">
 
     <style>
+        /* NavBar */
+        .navbar {
+            transition: background-color 0.3s ease-in-out;
+            /* 添加過渡效果 */
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            height: 50px;
+            min-width: 220px;
+        }
+
+        #myNavbar>div>a {
+            margin: 0px;
+            margin-left: 10px;
+        }
+
+        a.nav-link {
+            /* color: aliceblue; */
+            /* text-shadow: 0px 0px 5px rgba(0, 0, 0, 1); */
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        a.nav-link:hover {
+            color: white;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        #mynavbar {
+            padding: 0px;
+        }
+
+        .navbar-collapse {
+            margin: 0px;
+            padding: 0px;
+            margin-top: -1px;
+            height: 100%;
+            /* background-color: rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            border-radius: 5px; */
+        }
+
+        .navbar-toggler {
+            background-color: white;
+            margin-right: 5px;
+            height: 39px;
+        }
+
+        .navbar-toggler:focus {
+            outline: none;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-width: 1px;
+            border-style: solid;
+        }
+
+        .navbar-toggler:hover {
+            outline: none;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-width: 1px;
+            border-style: solid;
+        }
+
+        #mynavbar>.memberCon {
+            margin: 0px;
+            padding: 0px;
+            height: 100%;
+            /* background-color: aquamarine; */
+            /* border: 1px solid rgba(0, 0, 0, 1); */
+        }
+
+        .memberConMd {
+            margin: 0px;
+            padding: 0px;
+            height: 100%;
+            /* background-color: aquamarine; */
+            /* border: 1px solid rgba(0, 0, 0, 1); */
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nameCon {
+            margin: 0px;
+            /* margin-right: 3px; */
+            padding: 0px;
+            height: 100%;
+            /* background-color: aqua; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nameCon>a  {
+            max-width: calc(100% - 10px);
+            max-height: calc(100% - 10px);
+            margin: 5px;
+            aspect-ratio: 1/1;
+        }
+        
+        .nameCon>a>img  {
+            max-width: 100%;
+            max-height: 100%;
+            margin: 0px;
+            aspect-ratio: 1/1;
+            outline: 1px solid rgba(0, 0, 0, 0.2);
+        }
+
+        /* ===== */
+
+        .bgCon {
+            margin: 0px;
+            margin-top: 50px;
+            padding: 0px;
+            min-width: 500px;
+            width: 100%;
+            height: 1000px;
+            /* border: 1px solid black; */
+            display: inline-flex;
+        }
+
+        .homeLeft {
+            min-width: 300px;
+            height: 100%;
+            /* background-color: aqua; */
+            margin: 0px;
+            padding: 50px;
+            position: fixed;
+        }
+
         .homeLeft2 {
             min-width: 300px;
             height: 100%;
@@ -144,6 +267,27 @@
             border-bottom-right-radius: 10px;
         }
 
+        .BGC_Gray {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .aa {
+            text-decoration: none;
+            color: black;
+        }
+
+        .aa:hover {
+            color: violet;
+        }
+
+        ul li,
+        ol li {
+            list-style-type: none;
+        }
+
+        li {
+            margin-left: -10px;
+        }
     </style>
 
 
@@ -194,22 +338,23 @@
     </nav>
     <div class="bgCon">
         <div class="homeLeft">
-            <h5>會員專區</h5>
+            <h5>一般會員</h5>
             <ul>
-                <li><a class="aa" href="./Member.html">基本資料</a></li>
-                <li><a class="aa" href="./Love.html">我的收藏</a></li>
-                <li><a class="aa" href="./Mimi.html">隱私設定</a></li>
+                <li><a href="./Member.html" class="aa">基本資料</a></li>
+                <li><a href="./Love.html" class="aa">我的收藏</a></li>
+                <li><a href="./Mimi.html" class="aa">隱私設定</a></li>
             </ul>
             <hr>
-            <h5>活動專區</h5>
+            <h5>廠商專區</h5>
             <ul>
-                <li><a class="aa" href="./List.html">我的活動</a></li>
+                <li>基本資料</li>
+                <li><a class="aa" href="./List.html">活動列表</a></li>
                 <li>上架活動</li>
             </ul>
         </div>
-        <!-- <div class="homeLeft2">
+        <div class="homeLeft2">
 
-        </div> -->
+        </div>
         <div class="homeRight">
             <div class="infoCon">
                 <div class="dataRow m-0 p-0">
