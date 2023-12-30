@@ -40,7 +40,6 @@
     <style>
         body {
             margin: 0px;
-            min-width: 510px;
         }
 
         #overlayDiv {
@@ -65,7 +64,126 @@
 
         /* ============================================= */
 
-        
+        .navbar {
+            transition: background-color 0.3s ease-in-out;
+            height: 50px;
+            min-width: 220px;
+        }
+
+        a.nav-link {
+            color: aliceblue;
+            text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        a.nav-link:hover {
+            color: white;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        #mynavbar {
+            width: 200px;
+            /* height: 100%; */
+            margin-left: auto;
+            margin-right: 20px;
+            margin-top: -1px;
+            background-color: rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+        }
+
+        .scrolledV2 {
+            background-color: white !important;
+            border: 1px solid rgba(0, 0, 0, 0.1) !important;
+            border-top: 0px !important;
+            border-top-left-radius: 0px !important;
+            border-top-right-radius: 0px !important;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0) !important;
+        }
+
+        .scrolledV2>ul .nav-item>a {
+            color: rgba(0, 0, 0, 0.7);
+            text-shadow: 0px 0px 5px rgba(0, 0, 0, 0);
+        }
+
+        .scrolledV2>ul .nav-item>a:hover {
+            color: plum;
+        }
+
+        .navbar-toggler {
+            background-color: white;
+            margin-right: 10px;
+        }
+
+        .navbar-toggler:focus {
+            outline: none;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-width: 1px;
+            border-style: solid;
+        }
+
+        #mynavbarCon {
+            width: 100vw;
+            height: 100%;
+            margin: 0px;
+            padding: 5px;
+            padding-right: 10px;
+            border: 1px solid rgba(0, 0, 0, 0);
+        }
+
+        .scrolled {
+            background-color: white;
+            /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+            border: 1px solid rgba(0, 0, 0, 0.1) !important;
+            /* 滾動高度超過 35vw 時的背景顏色 */
+        }
+
+        .collapseCon {
+            margin-left: auto;
+            margin-right: 0px;
+            /* background-color: aqua; */
+        }
+
+        .nameCon {
+            margin: 0px;
+            /* margin-right: 3px; */
+            padding: 0px;
+            height: 100%;
+            /* background-color: aqua; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .memberConMd {
+            margin: 0px;
+            padding: 0px;
+            height: 100%;
+            /* background-color: aquamarine; */
+            /* border: 1px solid rgba(0, 0, 0, 1); */
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nameCon>a {
+            height: 100%;
+            aspect-ratio: 1/1;
+            width: auto;
+            margin: 0px;
+            margin-right: 5px;
+            padding: 0px;
+        }
+
+        .nameCon>a>img {
+            height: 100%;
+            aspect-ratio: 1/1;
+            width: auto;
+            margin: 0px;
+            outline: 1px solid rgba(0, 0, 0, 0.2);
+        }
 
         /* ============================================= */
 
@@ -242,7 +360,7 @@
             align-items: center;
         }
 
-        .OffcanBtn > img {
+        .OffcanBtn>img {
             /* background-color: aqua; */
         }
 
@@ -268,6 +386,15 @@
 
         /* ==================================================== */
 
+        .aa {
+            text-decoration: none;
+            color: black;
+        }
+
+        .aa:hover {
+            color: violet;
+        }
+
         footer {
             height: 200px;
         }
@@ -288,20 +415,27 @@
 
     <div id="overlayDiv">
         <!-- navBar -->
-        <nav id="myNavbar" class="navbar bg-none w-100 fixed-top" style=" top: 0px;">
+        <nav id="myNavbar" class="navbar bg-none w-100 fixed-top m-0 p-0" style=" top: 0px;">
             <div class="container-fluid m-0 p-0 h-100">
                 <div class="row m-0 p-0 h-100">
-                    <div id="mynavbarCon" class="col-12 m-0 p-0 d-flex justify-content-between align-items-center">
-                        <a href="#" class="navbar-brand" style="font-size:x-large;">Logo</a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#mynavbar" aria-controls="navbarSupportedContent" aria-expanded="false"
-                            aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
+                    <div id="mynavbarCon" class="col-12 d-flex justify-content-between align-items-center">
+                        <a href="./index.html" class="navbar-brand" style="font-size:x-large;">Logo</a>
+                        <div class="memberConMd d-flex">
+                            <div class="nameCon">
+                                <a href="./Member.html">
+                                    <img class="rounded-circle img-fluid" src="./image/IMG_0987.JPG" alt="">
+                                </a>
+                            </div>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#mynavbar" aria-controls="navbarSupportedContent" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                        </div>
                     </div>
                     <div class="collapseCon">
                         <div class="collapse navbar-collapse" id="mynavbar">
-                            <ul class="navbar-nav m-0 p-0">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
                                     <a id="news" onclick="nav_item_active()" class="nav-link" aria-current="page"
                                         href="#">活動資訊</a>
@@ -319,15 +453,15 @@
                                         href="#">關於我們</a>
                                 </li>
                             </ul>
-                            <!-- <form class="d-flex" role="search">
-                                <input id="search_input" class="form-control m-0 p-0" type="search" placeholder="搜尋"
+                            <form class="d-flex" role="search">
+                                <input id="search_input" class="form-control me-2" type="search" placeholder="搜尋"
                                     aria-label="Search">
                                 <button id="search_btn" class="btn btn-outline-success" type="submit">
                                     <span class="material-icons" style="vertical-align: middle;">
                                         search
                                     </span>
                                 </button>
-                            </form> -->
+                            </form>
                         </div>
                     </div>
                 </div>
