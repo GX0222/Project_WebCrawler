@@ -9,3 +9,7 @@
 .BGC_Green {
     background-color: rgba(0, 150, 0, 0.3);
 }
+
+.BGC_Coffee {
+    background-color: rgba(152, 115, 78, 0.4) !important;
+}
