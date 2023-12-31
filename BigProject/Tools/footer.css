@@ -1,0 +1,29 @@
+/*********************************footer**********************************************/
+
+.footer {
+    background: rgba(166, 122, 78, 0.331);
+    padding: 10px;
+    padding-top: 20px;
+}
+
+.ftinfo {
+    color: #6e6e6e;
+    padding-left: 1rem;
+}
+
+.ftinfo a {
+    text-decoration: none;
+    color: #848484;
+}
+
+.ftinfo a:hover {
+    color: rgb(0, 0, 0);
+}
+
+.st {
+    text-align: center;
+    background: rgba(112, 87, 63, 0.4);
+    padding: 8px;
+    color: #ffffff;
+
+}
