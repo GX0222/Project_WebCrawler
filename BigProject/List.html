@@ -23,62 +23,20 @@
     <!-- NavBar -->
     <link rel="stylesheet" href="./Tools/NavBar_2.css">
     <!-- Css -->
+    <link rel="stylesheet" href="./Tools/List.css">
     <link rel="stylesheet" href="./Tools/Membe.css">
     <!-- Color -->
     <link rel="stylesheet" href="./Tools/Color.css">
 
-    <style>
-        .homeLeft2 {
-            min-width: 300px;
-            height: 100%;
-            /* background-color: aqua; */
-            margin: 0px;
-            padding: 50px;
-        }
-        /* ========== */
-
-        .homeRight {
-            height: 100%;
-            width: 100%;
-            max-width: 1400px;
-            min-width: 796px;
-            /* background-color: greenyellow; */
-            display: flex;
-            /* align-items: center; */
-            justify-content: center;
-        }
-
-        .infoCon {
-            max-width: 1040px;
-            /* background-color: yellowgreen; */
-            margin: 0px;
-            padding: 0px;
-            margin-top: 30px;
-        }
-
-        .dataTable {
-            background-color: aquamarine;
-        }
-
-        .dataTable th {
-            width: 200px;
-        }
-
-        .dataTable img {
-            width: 200px;
-        }
-
-        /* =========== */
-    </style>
-
-
-
 </head>
 
 <body>
+    <!-- NavBar -->
     <nav id="myNavbar" class="navbar navbar-expand-md bg-none w-100 fixed-top m-0 p-0" style=" top: 0px;">
         <div class="container-fluid m-0 p-0 h-100">
-            <a href="./index.html" class="navbar-brand" style="font-size:x-large;">Logo</a>
+            <a href="./index.html" class="navbar-brand m-0 p-0" style="font-size:x-large;">
+             <img src="./image/logo1228.png" class=" m-0 p-0" alt="logo" width="65" height="50">
+            </a>
             <div class="memberConMd d-flex d-md-none">
                 <div class="nameCon">
                     <a href="./Member.html">
@@ -90,7 +48,6 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
-
             <div class="collapse navbar-collapse" id="mynavbar">
                 <ul class="navbar-nav me-auto mb-0">
                     <li class="nav-item">
@@ -117,6 +74,7 @@
             </div>
         </div>
     </nav>
+    <!-- ===== -->
     <div class="bgCon">
         <div class="homeLeft">
             <h5>會員專區</h5>
@@ -136,24 +94,123 @@
 
         </div> -->
         <div class="homeRight">
+            <!-- <table class="dataTable">
+                <tr>
+                    <th>活動快照</th>
+                    <th>活動名稱</th>
+                    <th>活動時間</th>
+                    <th>活動地點</th>
+                    <th>活動介紹</th>
+                </tr>
+                <tr>
+                    <td><img src="./image/2023聖誕節.jpg" alt=""></td>
+                    <td><p>聖誕嘉年華</p></td>
+                </tr>
+                <tr>
+                    <td><img src="./image/2023聖誕節.jpg" alt=""></td>
+                    <td><p>新北耶誕城</p></td>
+                </tr>
+            </table> -->
             <div class="infoCon">
-                <table class="dataTable">
-                    <tr>
-                        <th>活動快照</th>
-                        <th>活動名稱</th>
-                        <th>活動時間</th>
-                        <th>活動地點</th>
-                        <th>活動介紹</th>
-                    </tr>
-                    <tr>
-                        <td><img src="./image/2023聖誕節.jpg" alt=""></td>
-                        <td><p>聖誕嘉年華</p></td>
-                    </tr>
-                    <tr>
-                        <td><img src="./image/2023聖誕節.jpg" alt=""></td>
-                        <td><p>新北耶誕城</p></td>
-                    </tr>
-                </table>
+                <ul>
+                    <li class="dataList">
+                        <div class="dataDay">2023-12-20</div>
+                        <a href="https://travel.taichung.gov.tw/">
+                            <div class="dataImg">
+                                <img src="./image/2023聖誕節.jpg">
+                            </div>
+                            <div class="dataText">
+                                <div class="dataCounty">
+                                    台北市
+                                </div>
+                                <div class="dataInfo">
+                                    卡司制霸全台！台中最強跨年三大亮點 High翻中央公園
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="dataList">
+                        <div class="dataDay">2023-12-20</div>
+                        <a href="https://travel.taichung.gov.tw/">
+                            <div class="dataImg">
+                                <img src="./image/2023聖誕節.jpg">
+                            </div>
+                            <div class="dataText">
+                                <div class="dataCounty">
+                                    台北市
+                                </div>
+                                <div class="dataInfo">
+                                    卡司制霸全台！台中最強跨年三大亮點 High翻中央公園
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="dataList">
+                        <div class="dataDay">2023-12-20</div>
+                        <a href="https://travel.taichung.gov.tw/">
+                            <div class="dataImg">
+                                <img src="./image/2023聖誕節.jpg">
+                            </div>
+                            <div class="dataText">
+                                <div class="dataCounty">
+                                    台北市
+                                </div>
+                                <div class="dataInfo">
+                                    卡司制霸全台！台中最強跨年三大亮點 High翻中央公園
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="dataList">
+                        <div class="dataDay">2023-12-20</div>
+                        <a href="https://travel.taichung.gov.tw/">
+                            <div class="dataImg">
+                                <img src="./image/2023聖誕節.jpg">
+                            </div>
+                            <div class="dataText">
+                                <div class="dataCounty">
+                                    台北市
+                                </div>
+                                <div class="dataInfo">
+                                    卡司制霸全台！台中最強跨年三大亮點 High翻中央公園
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="dataList">
+                        <div class="dataDay">2023-12-20</div>
+                        <a href="https://travel.taichung.gov.tw/">
+                            <div class="dataImg">
+                                <img src="./image/2023聖誕節.jpg">
+                            </div>
+                            <div class="dataText">
+                                <div class="dataCounty">
+                                    台北市
+                                </div>
+                                <div class="dataInfo">
+                                    卡司制霸全台！台中最強跨年三大亮點 High翻中央公園
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <nav aria-label="Page navigation example" style="padding: 0,auto;">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
                 <div class="text-center p-3">
                     <small class="text-muted">沒有更多摟~</small>
                 </div>

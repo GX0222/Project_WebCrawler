@@ -1,0 +1,10 @@
+.homeRight {
+    height: 100%;
+    width: 100%;
+    max-width: 1400px;
+    min-width: 796px;
+    /* background-color: greenyellow; */
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+}

@@ -41,14 +41,12 @@
             width: 100%;
             max-width: 1400px;
             min-width: 796px;
-            /* background-color: greenyellow; */
             display: flex;
-            /* align-items: center; */
             justify-content: center;
         }
 
         .infoCon {
-            max-width: 1040px;
+            max-width: 1080px;
             /* background-color: yellowgreen; */
             margin: 0px;
             padding: 0px;
@@ -64,22 +62,20 @@
         .dataCon {
             height: 300px;
             width: 260px;
-            margin: 0px;
+            margin: 5px;
             padding: 10px;
-            /* background-color: rgba(201, 201, 201, 0.909); */
-            /* border: 2px solid; */
+            /* background-color: rgba(150, 115, 80, 0.6); */
+            background-color:rgb(255, 245, 235);
             position: relative;
+            border-radius: 15px;
+            border: 5px solid rgba(150, 115, 80, 0.6);
         }
 
         .imgCon {
             height: 135px;
             max-width: 100%;
-            /* aspect-ratio: 16/9; */
             padding: 0px;
             margin: 0px;
-            /* background-color: lightseagreen; */
-            /* border-top-left-radius: 5px; */
-            /* overflow: hidden; */
         }
 
         .imgCon>img {
@@ -89,14 +85,13 @@
             margin: 0px;
             border-top-right-radius: 10px;
             border-top-left-radius: 10px;
-            /* object-fit: cover; */
         }
 
         .dataCon>.material-symbols-outlined {
             user-select: none;
             position: absolute;
             color: violet;
-            left: 220px;
+            left: 212px;
             top: 15px;
             font-variation-settings:
                 'FILL' 1,
@@ -110,7 +105,7 @@
             color: white;
             left: 220px;
             top: 15px;
-            text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+            text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
             font-variation-settings:
                 'FILL' 0,
                 'wght' 400,
@@ -125,6 +120,7 @@
             height: 40px;
             text-align: center;
             line-height: 40px;
+            background-color:rgb(255, 245, 235);
         }
 
         .dataTime {
@@ -133,15 +129,16 @@
             height: 30px;
             text-align: center;
             line-height: 30px;
+            background-color:rgb(255, 245, 235);
         }
 
         .dataPosi {
             margin: 0px;
             padding: 5px;
             height: calc(100% - 205px);
-            background-color: white;
             border-bottom-left-radius: 10px;
             border-bottom-right-radius: 10px;
+            background-color:rgb(255, 245, 235);
         }
 
     </style>
@@ -153,7 +150,9 @@
 <body>
     <nav id="myNavbar" class="navbar navbar-expand-md bg-none w-100 fixed-top m-0 p-0" style=" top: 0px;">
         <div class="container-fluid m-0 p-0 h-100">
-            <a href="./index.html" class="navbar-brand" style="font-size:x-large;">Logo</a>
+            <a href="./index.html" class="navbar-brand m-0 p-0" style="font-size:x-large;">
+             <img src="./image/logo1228.png" class=" m-0 p-0" alt="logo" width="65" height="50">
+            </a>
             <div class="memberConMd d-flex d-md-none">
                 <div class="nameCon">
                     <a href="./Member.html">
@@ -165,7 +164,6 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
-
             <div class="collapse navbar-collapse" id="mynavbar">
                 <ul class="navbar-nav me-auto mb-0">
                     <li class="nav-item">
@@ -213,6 +211,7 @@
         <div class="homeRight">
             <div class="infoCon">
                 <div class="dataRow m-0 p-0">
+                    
                     <div class="dataCon">
                         <div class="material-symbols-outlined">
                             favorite
@@ -220,13 +219,13 @@
                         <div class="imgCon">
                             <img src="./image/2023聖誕節.jpg">
                         </div>
-                        <div class="dataTitle BGC_Gray">
+                        <div class="dataTitle">
                             2023聖誕節
                         </div>
-                        <div class="dataTime BGC_Gray">
+                        <div class="dataTime">
                             1月29日 ~ 2月31日
                         </div>
-                        <div class="dataPosi BGC_Gray">
+                        <div class="dataPosi">
                             地點：台中市西區健行路1049號金典綠園道商場三樓
                         </div>
                     </div>

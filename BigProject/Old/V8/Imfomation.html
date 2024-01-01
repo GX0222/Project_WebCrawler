@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>活動資訊</title>
+    <link rel="stylesheet" href="./Tools/info_nav.css">
+    <link rel="stylesheet" href="./Tools/info_list.css">
+    <link rel="stylesheet" href="./Tools/footer.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <!-- Google Icon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- SimpleBar-->
+    <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+    <!-- NavBar -->
+    <link rel="stylesheet" href="./Tools/NavBar_2.css">
+
+    <style>
+        /* body {
+            margin: 0px;
+        } */
+
+        #overlayDiv {
+            padding-top: 4vw;
+        }
+
+
+
+        /* ===== */
+
+        .bgCon {
+            margin: 0px;
+            margin-top: 50px;
+            padding: 0px;
+            min-width: 500px;
+            width: 100%;
+            height: 1000px;
+            /* border: 1px solid black; */
+            display: inline-flex;
+        }
+
+        .homeLeft {
+            min-width: 300px;
+            height: 100%;
+            /* background-color: aqua; */
+            margin: 0px;
+            padding: 50px;
+        }
+
+        .homeRight {
+            height: 100%;
+            width: 100%;
+            max-width: 1400px;
+            /* background-color: greenyellow; */
+            display: flex;
+            /* align-items: center; */
+            justify-content: center;
+        }
+
+        .homeRight>div {
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .memberInfo {
+            width: 100%;
+            max-width: 800px;
+            height: 300px;
+            padding: 0px;
+            /* background-color: blueviolet; */
+            display: inline-flex;
+            margin: 0 auto;
+        }
+
+        .memberImg {
+            aspect-ratio: 1/1;
+            margin: 0px;
+            padding: 10px;
+            /* background-color: blue; */
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .memberImg>img {
+            max-width: 100%;
+            max-height: 100%;
+            margin: 0px;
+            aspect-ratio: 1/1;
+            outline: 1px solid rgba(0, 0, 0, 0.2);
+        }
+
+        .memberLV {
+            margin: 0px;
+            padding: 0px;
+            /* width: calc(100% - 300px); */
+            width: 100%;
+            height: 100%;
+            background-color: aquamarine;
+        }
+
+        .membrForm {
+            margin: 0px;
+            padding: 40px;
+            height: auto;
+            width: 100%;
+            max-width: 800px;
+            /* border: 1px solid black; */
+            display: flex;
+            justify-content: center;
+        }
+
+        .likeCheck>.form-check {
+            width: 150px;
+        }
+
+        .aa {
+            text-decoration: none;
+            color: black;
+        }
+
+        .aa:hover {
+            color: violet;
+        }
+
+        ul li,
+        ol li {
+            list-style-type: none;
+        }
+
+        li {
+            margin-left: -10px;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <div id="overlayDiv">
+        <nav id="myNavbar" class="navbar navbar-expand-md bg-none w-100 fixed-top m-0 p-0" style=" top: 0px;">
+            <div class="container-fluid m-0 p-0 h-100">
+                <a href="./index.html" class="navbar-brand m-0 p-0" style="font-size:x-large;">
+                    <img src="./image/logo1228.png" class=" m-0 p-0" alt="logo" width="65" height="50">
+                </a>
+                <div class="memberConMd d-flex d-md-none">
+                    <div class="nameCon">
+                        <a href="./Member.html">
+                            <img class="rounded-circle img-fluid" src="./image/IMG_0987.JPG" alt="">
+                        </a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="mynavbar">
+                    <ul class="navbar-nav me-auto mb-0">
+                        <li class="nav-item">
+                            <a id="news" onclick="nav_item_active()" class="nav-link" aria-current="page"
+                                href="#">活動資訊</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="trans" onclick="nav_item_active()" class="nav-link" aria-current="page"
+                                href="#">交通情報</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="forum" onclick="nav_item_active()" class="nav-link" aria-current="page"
+                                href="#">旅遊論壇</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="aboutus" onclick="nav_item_active()" class="nav-link" aria-current="page"
+                                href="#">關於我們</a>
+                        </li>
+                    </ul>
+                    <div class="memberCon d-none d-md-flex">
+                        <div class="nameCon">
+                            <a href="./Member.html">
+                                <img class="rounded-circle img-fluid" src="./image/IMG_0987.JPG" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div id="newBG" class="row justify-content-center">
+        <div class="homeCenter col-12 col-md-9 order-2 order-md-1">
+            <!-- ---------- -->
+            <div id="groupNews">
+                <div class="groupTitle">
+                    <h3>活動資訊</h3>
+                    <hr>
+                </div>
+
+                <!-- 活動資訊 分類bar -->
+                <div>
+
+                    <ul id="info-ulbar" class="nav nav-pills">
+                        <li id="info-bar">
+                            <a class="nav-link active" aria-current="page" href="#">旅展資訊</a>
+                        </li>
+                        <h4>|</h4>
+                        <li id="info-bar">
+                            <a class="nav-link" href="#">即將開始</a>
+                        </li>
+                        <h4>|</h4>
+                        <li id="info-bar">
+                            <a class="nav-link" href="#">進行中</a>
+                        </li>
+                        <h4>|</h4>
+                        <li id="info-bar">
+                            <a class="nav-link" href="#">優惠情報</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <!-- 活動資訊 表格 -->
+                <div class="news">
+                    <ul>
+                        <li class="newslist">
+                            <div>2023-12-20</div>
+                            <a href="https://travel.taichung.gov.tw/">卡司制霸全台！台中最強跨年三大亮點 High翻中央公園</a>
+                        </li>
+
+                        <li class="newslist">
+                            <div>2023-12-20</div>
+                            <a href="https://travel.taichung.gov.tw/">卡司制霸全台！台中最強跨年三大亮點 High翻中央公園</a>
+                        </li>
+
+                        <li class="newslist">
+                            <div>2023-12-20</div>
+                            <a href="https://travel.taichung.gov.tw/">卡司制霸全台！台中最強跨年三大亮點 High翻中央公園</a>
+                        </li>
+
+                        <li class="newslist">
+                            <div>2023-12-20</div>
+                            <a href="https://travel.taichung.gov.tw/">卡司制霸全台！台中最強跨年三大亮點 High翻中央公園</a>
+                        </li>
+
+                        <li class="newslist">
+                            <div>2023-12-20</div>
+                            <a href="https://travel.taichung.gov.tw/">卡司制霸全台！台中最強跨年三大亮點 High翻中央公園</a>
+                        </li>
+
+
+                    </ul>
+                </div>
+
+                <!-- 頁碼 -->
+                <nav aria-label="Page navigation example" style="padding: 0,auto;">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+
+        </div>
+    </div>
+    <!--footer-->
+    <div class="row footer" style="margin-top: 3%;">
+        <div style="text-align: center;">
+            <div class="ftinfo">
+                <h3>隱私權政策</h3>
+            </div>
+        </div>
+        <div class="ftinfo">
+            <h4>個人資料蒐集之目的與類別</h4>
+            <p>為了提供電子商務服務、履行法定義務、保護當事人及相關利害關係人之權益、行銷、客戶管理與服務
+                ，依照各服務之性質，有可能會蒐集您的姓名、連絡方式(包括但不限於電話、E-MAIL及地址等)、
+                、IP位址、及其他得以直接或間接識別使用者身分之個人資料。
+                此外，為提升服務品質，周末跟我趣會依照所提供服務之性質，記錄使用者的IP位址、以及在周末跟
+                我趣相關網站的瀏覽活動(如，使用者所使用的軟硬體、所點選的網頁)等資料，但是這些資料僅供作
+                流量分析和網路行為調查，以便於改善周末跟我趣相關網站的服務品質，不會和特定個人相連繫。
+            </p>
+        </div>
+        <div class="ftinfo">
+            <h4>Cookie</h4>
+            <p>為了便利使用者，周末跟我趣網站可能會讀取儲存在使用者電腦中的cookie資料。使用者可以經由
+                瀏覽器的設定，取消或限制此項功能，但可能因此無法使用部份網站功能。
+            </p>
+        </div>
+        <div class="ftinfo">
+            <h4>本隱私權政策修訂權利</h4>
+            <p>周末跟我趣有權隨時修訂本隱私權聲明及相關告知事項，並得於修訂後公佈在周末跟我趣網站，
+                不另行個別通知，您可以隨時在周末跟我趣網站上詳閱修訂後的隱私權聲明及相關告知事項。
+            </p>
+        </div>
+
+    </div>
+
+    <div class="row st">
+        <div>
+            <p><small>&copy; 2023-2024 EEIT73結訓發表成果-周末跟我趣 </small></p>
+        </div>
+    </div>
+    <!--footer end-->
+
+
+
+    <script>
+        $(document).ready(function () {
+
+
+
+
+        });
+
+
+    </script>
+
+</body>
+
+</html>

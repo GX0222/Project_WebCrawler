@@ -23,7 +23,7 @@ div.newsImgCon {
     margin: 0px;
     padding: 0px;
     position: relative;
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
     display: flex;
     align-items: center;
     justify-content: start;
@@ -90,12 +90,25 @@ div.newsTextBgL::before {
     transform: skewX(20deg);
 }
 
+#news1:hover .newsTextBgR,#news1:hover .newsTextBgR::before, 
+#news2:hover .newsTextBgL,#news2:hover .newsTextBgL::before {
+    background-color: rgb(200, 200, 200);
+}
+
+#news1:hover .newsImg,#news2:hover .newsImg {
+    filter: brightness(80%);
+}
+
+a.newsA {
+    color: inherit;
+}
+
 div.newsText {
     width: 100%;
     max-width: 100%;
     max-height: 100%;
     margin: 0;
-    padding: 0px;
+    padding: 10px;
     /* 兩端對齊 */
     text-align: justify;
     overflow: hidden;
@@ -106,7 +119,7 @@ div.newsText {
     white-space: normal;
     /* background-color: antiquewhite; */
     box-sizing: border-box;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1.5;
 }
 

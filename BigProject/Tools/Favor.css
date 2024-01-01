@@ -24,14 +24,14 @@ div.info {
     text-align: center;
 }
 
-#infoUlbar {
+#infoUlbar, #countyBar {
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#infoUlbar h4 {
+#infoUlbar h4, #countyBar h4 {
     color: rgba(152, 115, 78, 0.4);
 }
 
@@ -117,7 +117,7 @@ div.dataImg > img {
 }
 
 .dataList a:hover {
-    color: #1C6EA4;
+    color: rgba(150, 115, 80);
 }
 
 .dataText {
@@ -125,7 +125,16 @@ div.dataImg > img {
     margin-left: 30px;
     padding: 20px;
     padding-top: 0%;
-    border-left: 1px solid rgba(152, 115, 78, 0.4);
+    border-left: 1px solid rgba(150, 115, 80, 0.4);
+}
+
+div.dataCounty {
+    font-size:smaller;
+}
+
+div.dataInfo {
+    font-size: large;
+    margin-top: 10px;
 }
 
 /* =====頁碼===== */
@@ -139,6 +148,6 @@ div.dataImg > img {
 }
 
 .page-item a:hover {
-    color: #30a8f7;
+    color: rgba(150, 115, 80);
 }
 
